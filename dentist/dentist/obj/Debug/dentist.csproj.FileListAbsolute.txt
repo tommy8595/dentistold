@@ -1,0 +1,62 @@
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\bin\Debug\dentist.exe.config
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\bin\Debug\dentist.exe
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\bin\Debug\dentist.pdb
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.MyMSB.resources
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.Properties.Resources.resources
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.Cache
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.exe
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.pdb
+<<<<<<< HEAD
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\bin\Debug\dentist.exe.config
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\bin\Debug\dentist.exe
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\bin\Debug\dentist.pdb
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.csprojAssemblyReference.cache
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Login.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.MyMSB.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.Properties.Resources.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.cache
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.exe
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.pdb
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Home.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Patient.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail_Edit.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Product.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Product_Import.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Register_Product.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Product_Detail.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Patient_Register.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Expense.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Expense_Add.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Income.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Doctor.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Doctor_Detail.resources
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_Doctor_Register.resources
+=======
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.Form1.resources
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.TestForm.resources
+C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.csprojResolveAssemblyReference.cache
+>>>>>>> 6a571ddea1f58c73d3d5f8b0c58caee46bd260a8
+C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.TestForm.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.csprojAssemblyReference.cache
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.exe
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.pdb
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Doctor.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Doctor_Detail.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Doctor_Register.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Expense.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Expense_Add.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Home.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Income.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Login.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Patient.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail_Edit.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Product.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Product_Detail.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Product_Import.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Register_Product.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Patient_Register.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.MyMSB.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.Properties.Resources.resources
+C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.cache
