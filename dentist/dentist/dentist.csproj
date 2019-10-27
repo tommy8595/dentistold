@@ -209,7 +209,6 @@
     <EmbeddedResource Include="frm_Patient_Register.resx">
       <DependentUpon>frm_Patient_Register.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Validation.cs" />
     <EmbeddedResource Include="MyMSB.resx">
       <DependentUpon>MyMSB.cs</DependentUpon>
     </EmbeddedResource>

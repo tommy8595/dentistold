@@ -19,7 +19,6 @@ namespace dentist
 
             Application.Run(new frm_Login());
 
-            Application.Run(new TestForm());
 
         }
     }
