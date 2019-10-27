@@ -60,6 +60,7 @@ C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Pati
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.MyMSB.resources
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.Properties.Resources.resources
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.cache
+<<<<<<< HEAD
 D:\Dentist\dentist\dentist\obj\Debug\dentist.csprojAssemblyReference.cache
 D:\Dentist\dentist\dentist\obj\Debug\dentist.frm_Doctor.resources
 D:\Dentist\dentist\dentist\obj\Debug\dentist.frm_Doctor_Detail.resources
@@ -85,3 +86,30 @@ D:\Dentist\dentist\dentist\obj\Debug\dentist.pdb
 D:\Dentist\dentist\dentist\bin\Debug\dentist.exe.config
 D:\Dentist\dentist\dentist\bin\Debug\dentist.exe
 D:\Dentist\dentist\dentist\bin\Debug\dentist.pdb
+=======
+C:\Users\MSI\Documents\dentistold\dentist\dentist\bin\Debug\dentist.exe.config
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.exe
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.pdb
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csprojResolveAssemblyReference.cache
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Doctor.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Doctor_Detail.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Doctor_Register.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Expense.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Expense_Add.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Home.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Income.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Login.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Patient.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail_Edit.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Product.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Product_Detail.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Product_Import.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Register_Product.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Patient_Register.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.MyMSB.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.Properties.Resources.resources
+C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.Cache
+C:\Users\MSI\Documents\dentistold\dentist\dentist\bin\Debug\dentist.exe
+C:\Users\MSI\Documents\dentistold\dentist\dentist\bin\Debug\dentist.pdb
+>>>>>>> 8b30b412a55f8692ffa4e4015900ca0a8cfba203
