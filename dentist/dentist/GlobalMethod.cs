@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace dentist
 {
     public static class GlobalMethod
-    {   
+    {
         public static byte[] GetImageByte(string ImageFileLocation)
         {
             byte[] img = null;
@@ -37,7 +37,7 @@ namespace dentist
             return selectedDataRow[TableRowName].ToString();
         }
         public static DataTable convertDGVtoDT(DataGridView dgv)
-        {   
+        {
             DataTable dt = new DataTable();
             foreach (DataGridViewColumn col in dgv.Columns)
             {
@@ -53,7 +53,7 @@ namespace dentist
                 }
                 dt.Rows.Add(dRow);
             }
-            
+
             return dt;
         }
 
@@ -79,7 +79,7 @@ namespace dentist
             }
             catch (Exception t)
             {
-                HandleException("GlobleMethod / TestConnectionToDB : "+t.Message);
+                HandleException("GlobleMethod / TestConnectionToDB : " + t.Message);
             }
         }
         public static void TestConnectionToInternet()
