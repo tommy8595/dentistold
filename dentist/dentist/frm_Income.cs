@@ -18,7 +18,7 @@ namespace dentist
             InitializeComponent();
         }
 
-        Thread th;
+
 
         private void btn_Income_Back_Click(object sender, EventArgs e)
         {

@@ -6,7 +6,6 @@ C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.Properties
 C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.Cache
 C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.exe
 C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.pdb
-<<<<<<< HEAD
 C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\bin\Debug\dentist.exe.config
 C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\bin\Debug\dentist.exe
 C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\bin\Debug\dentist.pdb
@@ -36,7 +35,6 @@ C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.frm_
 C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.Form1.resources
 C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.TestForm.resources
 C:\Users\MSI\Documents\dentistCloud\dentist\dentist\obj\Debug\dentist.csprojResolveAssemblyReference.cache
->>>>>>> 6a571ddea1f58c73d3d5f8b0c58caee46bd260a8
 C:\Users\Thireach\Documents\Dental Clinic\dentist\dentist\obj\Debug\dentist.TestForm.resources
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.csprojAssemblyReference.cache
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.exe
@@ -60,7 +58,6 @@ C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.frm_Pati
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.MyMSB.resources
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.Properties.Resources.resources
 C:\Users\Thireach\Desktop\dentist_old\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.cache
-<<<<<<< HEAD
 D:\Dentist\dentist\dentist\obj\Debug\dentist.csprojAssemblyReference.cache
 D:\Dentist\dentist\dentist\obj\Debug\dentist.frm_Doctor.resources
 D:\Dentist\dentist\dentist\obj\Debug\dentist.frm_Doctor_Detail.resources
@@ -86,11 +83,9 @@ D:\Dentist\dentist\dentist\obj\Debug\dentist.pdb
 D:\Dentist\dentist\dentist\bin\Debug\dentist.exe.config
 D:\Dentist\dentist\dentist\bin\Debug\dentist.exe
 D:\Dentist\dentist\dentist\bin\Debug\dentist.pdb
-=======
 C:\Users\MSI\Documents\dentistold\dentist\dentist\bin\Debug\dentist.exe.config
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.exe
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.pdb
-C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csprojResolveAssemblyReference.cache
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Doctor.resources
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Doctor_Detail.resources
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Doctor_Register.resources
@@ -112,4 +107,3 @@ C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.Properties.R
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.Cache
 C:\Users\MSI\Documents\dentistold\dentist\dentist\bin\Debug\dentist.exe
 C:\Users\MSI\Documents\dentistold\dentist\dentist\bin\Debug\dentist.pdb
->>>>>>> 8b30b412a55f8692ffa4e4015900ca0a8cfba203

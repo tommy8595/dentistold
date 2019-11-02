@@ -27,7 +27,6 @@ namespace dentist
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
-
         private void openHome()
         {
             Application.Run(new frm_Home());

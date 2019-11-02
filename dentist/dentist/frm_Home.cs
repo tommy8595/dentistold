@@ -18,7 +18,7 @@ namespace dentist
             InitializeComponent();
         }
 
-        Thread th;
+
 
         private void btn_Patient_Click(object sender, EventArgs e)
         {
@@ -117,6 +117,24 @@ namespace dentist
         private void openDoctor()
         {
             Application.Run(new frm_Doctor());
+        }
+
+        private void frm_Home_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dentist_DS.fun_getPatientCurrentAppDate' table. You can move, or remove it, as needed.
+            this.fun_getPatientCurrentAppDateTableAdapter.Fill(this.dentist_DS.fun_getPatientCurrentAppDate);
+        }
+
+        private void btnEditPatient_Click(object sender, EventArgs e)
+        {
+            GlobalVariable._Patient_id = dgv_Home_Appointment.CurrentRow.Cells["patidDataGridViewTextBoxColumn"].Value.ToString();
+            frm_Patient_Detail form = new frm_Patient_Detail();
+            form.ShowDialog();
+        }
+
+        private void frm_Home_Activated(object sender, EventArgs e)
+        {
+            this.fun_getPatientCurrentAppDateTableAdapter.Fill(this.dentist_DS.fun_getPatientCurrentAppDate);
         }
     }
 }

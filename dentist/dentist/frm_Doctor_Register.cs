@@ -18,7 +18,7 @@ namespace dentist
             InitializeComponent();
         }
 
-        Thread th;
+
 
         private void btn_Doc_Reg_Save_Click(object sender, EventArgs e)
         {

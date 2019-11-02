@@ -24,9 +24,19 @@ namespace dentist {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class Dentist_DS : global::System.Data.DataSet {
         
+        private fun_getAllMedicalHistoryDataTable tablefun_getAllMedicalHistory;
+        
+        private fun_getActiveMedicalHistoryForSpecificPaientDataTable tablefun_getActiveMedicalHistoryForSpecificPaient;
+        
+        private fun_getMedicalHistoryForSpecificPatientDataTable tablefun_getMedicalHistoryForSpecificPatient;
+        
         private fun_getPatientByIDDataTable tablefun_getPatientByID;
         
-        private fun_getAllDiagnoseDataTable tablefun_getAllDiagnose;
+        private fun_getAllPatientDataTable tablefun_getAllPatient;
+        
+        private fun_getPatientImageByIDDataTable tablefun_getPatientImageByID;
+        
+        private fun_getPatientCurrentAppDateDataTable tablefun_getPatientCurrentAppDate;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -56,11 +66,26 @@ namespace dentist {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["fun_getAllMedicalHistory"] != null)) {
+                    base.Tables.Add(new fun_getAllMedicalHistoryDataTable(ds.Tables["fun_getAllMedicalHistory"]));
+                }
+                if ((ds.Tables["fun_getActiveMedicalHistoryForSpecificPaient"] != null)) {
+                    base.Tables.Add(new fun_getActiveMedicalHistoryForSpecificPaientDataTable(ds.Tables["fun_getActiveMedicalHistoryForSpecificPaient"]));
+                }
+                if ((ds.Tables["fun_getMedicalHistoryForSpecificPatient"] != null)) {
+                    base.Tables.Add(new fun_getMedicalHistoryForSpecificPatientDataTable(ds.Tables["fun_getMedicalHistoryForSpecificPatient"]));
+                }
                 if ((ds.Tables["fun_getPatientByID"] != null)) {
                     base.Tables.Add(new fun_getPatientByIDDataTable(ds.Tables["fun_getPatientByID"]));
                 }
-                if ((ds.Tables["fun_getAllDiagnose"] != null)) {
-                    base.Tables.Add(new fun_getAllDiagnoseDataTable(ds.Tables["fun_getAllDiagnose"]));
+                if ((ds.Tables["fun_getAllPatient"] != null)) {
+                    base.Tables.Add(new fun_getAllPatientDataTable(ds.Tables["fun_getAllPatient"]));
+                }
+                if ((ds.Tables["fun_getPatientImageByID"] != null)) {
+                    base.Tables.Add(new fun_getPatientImageByIDDataTable(ds.Tables["fun_getPatientImageByID"]));
+                }
+                if ((ds.Tables["fun_getPatientCurrentAppDate"] != null)) {
+                    base.Tables.Add(new fun_getPatientCurrentAppDateDataTable(ds.Tables["fun_getPatientCurrentAppDate"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,6 +109,36 @@ namespace dentist {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fun_getAllMedicalHistoryDataTable fun_getAllMedicalHistory {
+            get {
+                return this.tablefun_getAllMedicalHistory;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fun_getActiveMedicalHistoryForSpecificPaientDataTable fun_getActiveMedicalHistoryForSpecificPaient {
+            get {
+                return this.tablefun_getActiveMedicalHistoryForSpecificPaient;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fun_getMedicalHistoryForSpecificPatientDataTable fun_getMedicalHistoryForSpecificPatient {
+            get {
+                return this.tablefun_getMedicalHistoryForSpecificPatient;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public fun_getPatientByIDDataTable fun_getPatientByID {
             get {
                 return this.tablefun_getPatientByID;
@@ -94,9 +149,29 @@ namespace dentist {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public fun_getAllDiagnoseDataTable fun_getAllDiagnose {
+        public fun_getAllPatientDataTable fun_getAllPatient {
             get {
-                return this.tablefun_getAllDiagnose;
+                return this.tablefun_getAllPatient;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fun_getPatientImageByIDDataTable fun_getPatientImageByID {
+            get {
+                return this.tablefun_getPatientImageByID;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fun_getPatientCurrentAppDateDataTable fun_getPatientCurrentAppDate {
+            get {
+                return this.tablefun_getPatientCurrentAppDate;
             }
         }
         
@@ -167,11 +242,26 @@ namespace dentist {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["fun_getAllMedicalHistory"] != null)) {
+                    base.Tables.Add(new fun_getAllMedicalHistoryDataTable(ds.Tables["fun_getAllMedicalHistory"]));
+                }
+                if ((ds.Tables["fun_getActiveMedicalHistoryForSpecificPaient"] != null)) {
+                    base.Tables.Add(new fun_getActiveMedicalHistoryForSpecificPaientDataTable(ds.Tables["fun_getActiveMedicalHistoryForSpecificPaient"]));
+                }
+                if ((ds.Tables["fun_getMedicalHistoryForSpecificPatient"] != null)) {
+                    base.Tables.Add(new fun_getMedicalHistoryForSpecificPatientDataTable(ds.Tables["fun_getMedicalHistoryForSpecificPatient"]));
+                }
                 if ((ds.Tables["fun_getPatientByID"] != null)) {
                     base.Tables.Add(new fun_getPatientByIDDataTable(ds.Tables["fun_getPatientByID"]));
                 }
-                if ((ds.Tables["fun_getAllDiagnose"] != null)) {
-                    base.Tables.Add(new fun_getAllDiagnoseDataTable(ds.Tables["fun_getAllDiagnose"]));
+                if ((ds.Tables["fun_getAllPatient"] != null)) {
+                    base.Tables.Add(new fun_getAllPatientDataTable(ds.Tables["fun_getAllPatient"]));
+                }
+                if ((ds.Tables["fun_getPatientImageByID"] != null)) {
+                    base.Tables.Add(new fun_getPatientImageByIDDataTable(ds.Tables["fun_getPatientImageByID"]));
+                }
+                if ((ds.Tables["fun_getPatientCurrentAppDate"] != null)) {
+                    base.Tables.Add(new fun_getPatientCurrentAppDateDataTable(ds.Tables["fun_getPatientCurrentAppDate"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +296,46 @@ namespace dentist {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tablefun_getAllMedicalHistory = ((fun_getAllMedicalHistoryDataTable)(base.Tables["fun_getAllMedicalHistory"]));
+            if ((initTable == true)) {
+                if ((this.tablefun_getAllMedicalHistory != null)) {
+                    this.tablefun_getAllMedicalHistory.InitVars();
+                }
+            }
+            this.tablefun_getActiveMedicalHistoryForSpecificPaient = ((fun_getActiveMedicalHistoryForSpecificPaientDataTable)(base.Tables["fun_getActiveMedicalHistoryForSpecificPaient"]));
+            if ((initTable == true)) {
+                if ((this.tablefun_getActiveMedicalHistoryForSpecificPaient != null)) {
+                    this.tablefun_getActiveMedicalHistoryForSpecificPaient.InitVars();
+                }
+            }
+            this.tablefun_getMedicalHistoryForSpecificPatient = ((fun_getMedicalHistoryForSpecificPatientDataTable)(base.Tables["fun_getMedicalHistoryForSpecificPatient"]));
+            if ((initTable == true)) {
+                if ((this.tablefun_getMedicalHistoryForSpecificPatient != null)) {
+                    this.tablefun_getMedicalHistoryForSpecificPatient.InitVars();
+                }
+            }
             this.tablefun_getPatientByID = ((fun_getPatientByIDDataTable)(base.Tables["fun_getPatientByID"]));
             if ((initTable == true)) {
                 if ((this.tablefun_getPatientByID != null)) {
                     this.tablefun_getPatientByID.InitVars();
                 }
             }
-            this.tablefun_getAllDiagnose = ((fun_getAllDiagnoseDataTable)(base.Tables["fun_getAllDiagnose"]));
+            this.tablefun_getAllPatient = ((fun_getAllPatientDataTable)(base.Tables["fun_getAllPatient"]));
             if ((initTable == true)) {
-                if ((this.tablefun_getAllDiagnose != null)) {
-                    this.tablefun_getAllDiagnose.InitVars();
+                if ((this.tablefun_getAllPatient != null)) {
+                    this.tablefun_getAllPatient.InitVars();
+                }
+            }
+            this.tablefun_getPatientImageByID = ((fun_getPatientImageByIDDataTable)(base.Tables["fun_getPatientImageByID"]));
+            if ((initTable == true)) {
+                if ((this.tablefun_getPatientImageByID != null)) {
+                    this.tablefun_getPatientImageByID.InitVars();
+                }
+            }
+            this.tablefun_getPatientCurrentAppDate = ((fun_getPatientCurrentAppDateDataTable)(base.Tables["fun_getPatientCurrentAppDate"]));
+            if ((initTable == true)) {
+                if ((this.tablefun_getPatientCurrentAppDate != null)) {
+                    this.tablefun_getPatientCurrentAppDate.InitVars();
                 }
             }
         }
@@ -228,10 +348,38 @@ namespace dentist {
             this.Namespace = "http://tempuri.org/Dentist_DS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tablefun_getAllMedicalHistory = new fun_getAllMedicalHistoryDataTable();
+            base.Tables.Add(this.tablefun_getAllMedicalHistory);
+            this.tablefun_getActiveMedicalHistoryForSpecificPaient = new fun_getActiveMedicalHistoryForSpecificPaientDataTable();
+            base.Tables.Add(this.tablefun_getActiveMedicalHistoryForSpecificPaient);
+            this.tablefun_getMedicalHistoryForSpecificPatient = new fun_getMedicalHistoryForSpecificPatientDataTable();
+            base.Tables.Add(this.tablefun_getMedicalHistoryForSpecificPatient);
             this.tablefun_getPatientByID = new fun_getPatientByIDDataTable();
             base.Tables.Add(this.tablefun_getPatientByID);
-            this.tablefun_getAllDiagnose = new fun_getAllDiagnoseDataTable();
-            base.Tables.Add(this.tablefun_getAllDiagnose);
+            this.tablefun_getAllPatient = new fun_getAllPatientDataTable();
+            base.Tables.Add(this.tablefun_getAllPatient);
+            this.tablefun_getPatientImageByID = new fun_getPatientImageByIDDataTable();
+            base.Tables.Add(this.tablefun_getPatientImageByID);
+            this.tablefun_getPatientCurrentAppDate = new fun_getPatientCurrentAppDateDataTable();
+            base.Tables.Add(this.tablefun_getPatientCurrentAppDate);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefun_getAllMedicalHistory() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefun_getActiveMedicalHistoryForSpecificPaient() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefun_getMedicalHistoryForSpecificPatient() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,7 +390,19 @@ namespace dentist {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializefun_getAllDiagnose() {
+        private bool ShouldSerializefun_getAllPatient() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefun_getPatientImageByID() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefun_getPatientCurrentAppDate() {
             return false;
         }
         
@@ -302,10 +462,881 @@ namespace dentist {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fun_getAllMedicalHistoryRowChangeEventHandler(object sender, fun_getAllMedicalHistoryRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fun_getActiveMedicalHistoryForSpecificPaientRowChangeEventHandler(object sender, fun_getActiveMedicalHistoryForSpecificPaientRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fun_getMedicalHistoryForSpecificPatientRowChangeEventHandler(object sender, fun_getMedicalHistoryForSpecificPatientRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void fun_getPatientByIDRowChangeEventHandler(object sender, fun_getPatientByIDRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void fun_getAllDiagnoseRowChangeEventHandler(object sender, fun_getAllDiagnoseRowChangeEvent e);
+        public delegate void fun_getAllPatientRowChangeEventHandler(object sender, fun_getAllPatientRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fun_getPatientImageByIDRowChangeEventHandler(object sender, fun_getPatientImageByIDRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fun_getPatientCurrentAppDateRowChangeEventHandler(object sender, fun_getPatientCurrentAppDateRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fun_getAllMedicalHistoryDataTable : global::System.Data.TypedTableBase<fun_getAllMedicalHistoryRow> {
+            
+            private global::System.Data.DataColumn columnmd_id;
+            
+            private global::System.Data.DataColumn columnmd_name;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getAllMedicalHistoryDataTable() {
+                this.TableName = "fun_getAllMedicalHistory";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getAllMedicalHistoryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fun_getAllMedicalHistoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_idColumn {
+                get {
+                    return this.columnmd_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_nameColumn {
+                get {
+                    return this.columnmd_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getAllMedicalHistoryRow this[int index] {
+                get {
+                    return ((fun_getAllMedicalHistoryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getAllMedicalHistoryRowChangeEventHandler fun_getAllMedicalHistoryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getAllMedicalHistoryRowChangeEventHandler fun_getAllMedicalHistoryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getAllMedicalHistoryRowChangeEventHandler fun_getAllMedicalHistoryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getAllMedicalHistoryRowChangeEventHandler fun_getAllMedicalHistoryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addfun_getAllMedicalHistoryRow(fun_getAllMedicalHistoryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getAllMedicalHistoryRow Addfun_getAllMedicalHistoryRow(int md_id, string md_name) {
+                fun_getAllMedicalHistoryRow rowfun_getAllMedicalHistoryRow = ((fun_getAllMedicalHistoryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        md_id,
+                        md_name};
+                rowfun_getAllMedicalHistoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfun_getAllMedicalHistoryRow);
+                return rowfun_getAllMedicalHistoryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getAllMedicalHistoryRow FindBymd_id(int md_id) {
+                return ((fun_getAllMedicalHistoryRow)(this.Rows.Find(new object[] {
+                            md_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fun_getAllMedicalHistoryDataTable cln = ((fun_getAllMedicalHistoryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fun_getAllMedicalHistoryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnmd_id = base.Columns["md_id"];
+                this.columnmd_name = base.Columns["md_name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnmd_id = new global::System.Data.DataColumn("md_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_id);
+                this.columnmd_name = new global::System.Data.DataColumn("md_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_name);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnmd_id}, true));
+                this.columnmd_id.AllowDBNull = false;
+                this.columnmd_id.Unique = true;
+                this.columnmd_name.AllowDBNull = false;
+                this.columnmd_name.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getAllMedicalHistoryRow Newfun_getAllMedicalHistoryRow() {
+                return ((fun_getAllMedicalHistoryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fun_getAllMedicalHistoryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fun_getAllMedicalHistoryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fun_getAllMedicalHistoryRowChanged != null)) {
+                    this.fun_getAllMedicalHistoryRowChanged(this, new fun_getAllMedicalHistoryRowChangeEvent(((fun_getAllMedicalHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fun_getAllMedicalHistoryRowChanging != null)) {
+                    this.fun_getAllMedicalHistoryRowChanging(this, new fun_getAllMedicalHistoryRowChangeEvent(((fun_getAllMedicalHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fun_getAllMedicalHistoryRowDeleted != null)) {
+                    this.fun_getAllMedicalHistoryRowDeleted(this, new fun_getAllMedicalHistoryRowChangeEvent(((fun_getAllMedicalHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fun_getAllMedicalHistoryRowDeleting != null)) {
+                    this.fun_getAllMedicalHistoryRowDeleting(this, new fun_getAllMedicalHistoryRowChangeEvent(((fun_getAllMedicalHistoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removefun_getAllMedicalHistoryRow(fun_getAllMedicalHistoryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dentist_DS ds = new Dentist_DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fun_getAllMedicalHistoryDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fun_getActiveMedicalHistoryForSpecificPaientDataTable : global::System.Data.TypedTableBase<fun_getActiveMedicalHistoryForSpecificPaientRow> {
+            
+            private global::System.Data.DataColumn columnpat_id;
+            
+            private global::System.Data.DataColumn columnmd_id;
+            
+            private global::System.Data.DataColumn columnmd_description;
+            
+            private global::System.Data.DataColumn columnmd_status;
+            
+            private global::System.Data.DataColumn columnmd_name;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getActiveMedicalHistoryForSpecificPaientDataTable() {
+                this.TableName = "fun_getActiveMedicalHistoryForSpecificPaient";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getActiveMedicalHistoryForSpecificPaientDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fun_getActiveMedicalHistoryForSpecificPaientDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_idColumn {
+                get {
+                    return this.columnpat_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_idColumn {
+                get {
+                    return this.columnmd_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_descriptionColumn {
+                get {
+                    return this.columnmd_description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_statusColumn {
+                get {
+                    return this.columnmd_status;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_nameColumn {
+                get {
+                    return this.columnmd_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getActiveMedicalHistoryForSpecificPaientRow this[int index] {
+                get {
+                    return ((fun_getActiveMedicalHistoryForSpecificPaientRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getActiveMedicalHistoryForSpecificPaientRowChangeEventHandler fun_getActiveMedicalHistoryForSpecificPaientRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getActiveMedicalHistoryForSpecificPaientRowChangeEventHandler fun_getActiveMedicalHistoryForSpecificPaientRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getActiveMedicalHistoryForSpecificPaientRowChangeEventHandler fun_getActiveMedicalHistoryForSpecificPaientRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getActiveMedicalHistoryForSpecificPaientRowChangeEventHandler fun_getActiveMedicalHistoryForSpecificPaientRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addfun_getActiveMedicalHistoryForSpecificPaientRow(fun_getActiveMedicalHistoryForSpecificPaientRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getActiveMedicalHistoryForSpecificPaientRow Addfun_getActiveMedicalHistoryForSpecificPaientRow(int pat_id, string md_id, string md_description, string md_status, string md_name) {
+                fun_getActiveMedicalHistoryForSpecificPaientRow rowfun_getActiveMedicalHistoryForSpecificPaientRow = ((fun_getActiveMedicalHistoryForSpecificPaientRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        pat_id,
+                        md_id,
+                        md_description,
+                        md_status,
+                        md_name};
+                rowfun_getActiveMedicalHistoryForSpecificPaientRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfun_getActiveMedicalHistoryForSpecificPaientRow);
+                return rowfun_getActiveMedicalHistoryForSpecificPaientRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fun_getActiveMedicalHistoryForSpecificPaientDataTable cln = ((fun_getActiveMedicalHistoryForSpecificPaientDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fun_getActiveMedicalHistoryForSpecificPaientDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnpat_id = base.Columns["pat_id"];
+                this.columnmd_id = base.Columns["md_id"];
+                this.columnmd_description = base.Columns["md_description"];
+                this.columnmd_status = base.Columns["md_status"];
+                this.columnmd_name = base.Columns["md_name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnpat_id = new global::System.Data.DataColumn("pat_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_id);
+                this.columnmd_id = new global::System.Data.DataColumn("md_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_id);
+                this.columnmd_description = new global::System.Data.DataColumn("md_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_description);
+                this.columnmd_status = new global::System.Data.DataColumn("md_status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_status);
+                this.columnmd_name = new global::System.Data.DataColumn("md_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_name);
+                this.columnpat_id.AllowDBNull = false;
+                this.columnmd_id.MaxLength = 2147483647;
+                this.columnmd_description.MaxLength = 2147483647;
+                this.columnmd_status.MaxLength = 10;
+                this.columnmd_name.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getActiveMedicalHistoryForSpecificPaientRow Newfun_getActiveMedicalHistoryForSpecificPaientRow() {
+                return ((fun_getActiveMedicalHistoryForSpecificPaientRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fun_getActiveMedicalHistoryForSpecificPaientRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fun_getActiveMedicalHistoryForSpecificPaientRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fun_getActiveMedicalHistoryForSpecificPaientRowChanged != null)) {
+                    this.fun_getActiveMedicalHistoryForSpecificPaientRowChanged(this, new fun_getActiveMedicalHistoryForSpecificPaientRowChangeEvent(((fun_getActiveMedicalHistoryForSpecificPaientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fun_getActiveMedicalHistoryForSpecificPaientRowChanging != null)) {
+                    this.fun_getActiveMedicalHistoryForSpecificPaientRowChanging(this, new fun_getActiveMedicalHistoryForSpecificPaientRowChangeEvent(((fun_getActiveMedicalHistoryForSpecificPaientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fun_getActiveMedicalHistoryForSpecificPaientRowDeleted != null)) {
+                    this.fun_getActiveMedicalHistoryForSpecificPaientRowDeleted(this, new fun_getActiveMedicalHistoryForSpecificPaientRowChangeEvent(((fun_getActiveMedicalHistoryForSpecificPaientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fun_getActiveMedicalHistoryForSpecificPaientRowDeleting != null)) {
+                    this.fun_getActiveMedicalHistoryForSpecificPaientRowDeleting(this, new fun_getActiveMedicalHistoryForSpecificPaientRowChangeEvent(((fun_getActiveMedicalHistoryForSpecificPaientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removefun_getActiveMedicalHistoryForSpecificPaientRow(fun_getActiveMedicalHistoryForSpecificPaientRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dentist_DS ds = new Dentist_DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fun_getActiveMedicalHistoryForSpecificPaientDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fun_getMedicalHistoryForSpecificPatientDataTable : global::System.Data.TypedTableBase<fun_getMedicalHistoryForSpecificPatientRow> {
+            
+            private global::System.Data.DataColumn columnmd_id;
+            
+            private global::System.Data.DataColumn columnmd_name;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getMedicalHistoryForSpecificPatientDataTable() {
+                this.TableName = "fun_getMedicalHistoryForSpecificPatient";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getMedicalHistoryForSpecificPatientDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fun_getMedicalHistoryForSpecificPatientDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_idColumn {
+                get {
+                    return this.columnmd_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn md_nameColumn {
+                get {
+                    return this.columnmd_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getMedicalHistoryForSpecificPatientRow this[int index] {
+                get {
+                    return ((fun_getMedicalHistoryForSpecificPatientRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getMedicalHistoryForSpecificPatientRowChangeEventHandler fun_getMedicalHistoryForSpecificPatientRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getMedicalHistoryForSpecificPatientRowChangeEventHandler fun_getMedicalHistoryForSpecificPatientRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getMedicalHistoryForSpecificPatientRowChangeEventHandler fun_getMedicalHistoryForSpecificPatientRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getMedicalHistoryForSpecificPatientRowChangeEventHandler fun_getMedicalHistoryForSpecificPatientRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addfun_getMedicalHistoryForSpecificPatientRow(fun_getMedicalHistoryForSpecificPatientRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getMedicalHistoryForSpecificPatientRow Addfun_getMedicalHistoryForSpecificPatientRow(int md_id, string md_name) {
+                fun_getMedicalHistoryForSpecificPatientRow rowfun_getMedicalHistoryForSpecificPatientRow = ((fun_getMedicalHistoryForSpecificPatientRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        md_id,
+                        md_name};
+                rowfun_getMedicalHistoryForSpecificPatientRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfun_getMedicalHistoryForSpecificPatientRow);
+                return rowfun_getMedicalHistoryForSpecificPatientRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getMedicalHistoryForSpecificPatientRow FindBymd_id(int md_id) {
+                return ((fun_getMedicalHistoryForSpecificPatientRow)(this.Rows.Find(new object[] {
+                            md_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fun_getMedicalHistoryForSpecificPatientDataTable cln = ((fun_getMedicalHistoryForSpecificPatientDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fun_getMedicalHistoryForSpecificPatientDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnmd_id = base.Columns["md_id"];
+                this.columnmd_name = base.Columns["md_name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnmd_id = new global::System.Data.DataColumn("md_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_id);
+                this.columnmd_name = new global::System.Data.DataColumn("md_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmd_name);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnmd_id}, true));
+                this.columnmd_id.AllowDBNull = false;
+                this.columnmd_id.Unique = true;
+                this.columnmd_name.AllowDBNull = false;
+                this.columnmd_name.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getMedicalHistoryForSpecificPatientRow Newfun_getMedicalHistoryForSpecificPatientRow() {
+                return ((fun_getMedicalHistoryForSpecificPatientRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fun_getMedicalHistoryForSpecificPatientRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fun_getMedicalHistoryForSpecificPatientRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fun_getMedicalHistoryForSpecificPatientRowChanged != null)) {
+                    this.fun_getMedicalHistoryForSpecificPatientRowChanged(this, new fun_getMedicalHistoryForSpecificPatientRowChangeEvent(((fun_getMedicalHistoryForSpecificPatientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fun_getMedicalHistoryForSpecificPatientRowChanging != null)) {
+                    this.fun_getMedicalHistoryForSpecificPatientRowChanging(this, new fun_getMedicalHistoryForSpecificPatientRowChangeEvent(((fun_getMedicalHistoryForSpecificPatientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fun_getMedicalHistoryForSpecificPatientRowDeleted != null)) {
+                    this.fun_getMedicalHistoryForSpecificPatientRowDeleted(this, new fun_getMedicalHistoryForSpecificPatientRowChangeEvent(((fun_getMedicalHistoryForSpecificPatientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fun_getMedicalHistoryForSpecificPatientRowDeleting != null)) {
+                    this.fun_getMedicalHistoryForSpecificPatientRowDeleting(this, new fun_getMedicalHistoryForSpecificPatientRowChangeEvent(((fun_getMedicalHistoryForSpecificPatientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removefun_getMedicalHistoryForSpecificPatientRow(fun_getMedicalHistoryForSpecificPatientRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dentist_DS ds = new Dentist_DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fun_getMedicalHistoryForSpecificPatientDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -332,7 +1363,13 @@ namespace dentist {
             
             private global::System.Data.DataColumn columnpat_address;
             
-            private global::System.Data.DataColumn columnpat_image;
+            private global::System.Data.DataColumn columnpat_app_date;
+            
+            private global::System.Data.DataColumn columnpat_nation;
+            
+            private global::System.Data.DataColumn columnpat_tel;
+            
+            private global::System.Data.DataColumn columnpat_app_time;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -441,9 +1478,33 @@ namespace dentist {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn pat_imageColumn {
+            public global::System.Data.DataColumn pat_app_dateColumn {
                 get {
-                    return this.columnpat_image;
+                    return this.columnpat_app_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_nationColumn {
+                get {
+                    return this.columnpat_nation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_telColumn {
+                get {
+                    return this.columnpat_tel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_app_timeColumn {
+                get {
+                    return this.columnpat_app_time;
                 }
             }
             
@@ -484,7 +1545,7 @@ namespace dentist {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getPatientByIDRow Addfun_getPatientByIDRow(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, int pat_birthyear, string pat_job, string pat_address, byte[] pat_image) {
+            public fun_getPatientByIDRow Addfun_getPatientByIDRow(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, int pat_birthyear, string pat_job, string pat_address, System.DateTime pat_app_date, string pat_nation, string pat_tel, string pat_app_time) {
                 fun_getPatientByIDRow rowfun_getPatientByIDRow = ((fun_getPatientByIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         pat_id,
@@ -496,7 +1557,10 @@ namespace dentist {
                         pat_birthyear,
                         pat_job,
                         pat_address,
-                        pat_image};
+                        pat_app_date,
+                        pat_nation,
+                        pat_tel,
+                        pat_app_time};
                 rowfun_getPatientByIDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfun_getPatientByIDRow);
                 return rowfun_getPatientByIDRow;
@@ -528,7 +1592,10 @@ namespace dentist {
                 this.columnpat_birthyear = base.Columns["pat_birthyear"];
                 this.columnpat_job = base.Columns["pat_job"];
                 this.columnpat_address = base.Columns["pat_address"];
-                this.columnpat_image = base.Columns["pat_image"];
+                this.columnpat_app_date = base.Columns["pat_app_date"];
+                this.columnpat_nation = base.Columns["pat_nation"];
+                this.columnpat_tel = base.Columns["pat_tel"];
+                this.columnpat_app_time = base.Columns["pat_app_time"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -552,8 +1619,14 @@ namespace dentist {
                 base.Columns.Add(this.columnpat_job);
                 this.columnpat_address = new global::System.Data.DataColumn("pat_address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpat_address);
-                this.columnpat_image = new global::System.Data.DataColumn("pat_image", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpat_image);
+                this.columnpat_app_date = new global::System.Data.DataColumn("pat_app_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_app_date);
+                this.columnpat_nation = new global::System.Data.DataColumn("pat_nation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_nation);
+                this.columnpat_tel = new global::System.Data.DataColumn("pat_tel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_tel);
+                this.columnpat_app_time = new global::System.Data.DataColumn("pat_app_time", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_app_time);
                 this.columnpat_kh_fname.MaxLength = 2147483647;
                 this.columnpat_kh_lname.MaxLength = 2147483647;
                 this.columnpat_fname.MaxLength = 2147483647;
@@ -561,6 +1634,9 @@ namespace dentist {
                 this.columnpat_gender.MaxLength = 10;
                 this.columnpat_job.MaxLength = 2147483647;
                 this.columnpat_address.MaxLength = 2147483647;
+                this.columnpat_nation.MaxLength = 2147483647;
+                this.columnpat_tel.MaxLength = 2147483647;
+                this.columnpat_app_time.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -692,16 +1768,40 @@ namespace dentist {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class fun_getAllDiagnoseDataTable : global::System.Data.TypedTableBase<fun_getAllDiagnoseRow> {
+        public partial class fun_getAllPatientDataTable : global::System.Data.TypedTableBase<fun_getAllPatientRow> {
             
-            private global::System.Data.DataColumn columndiag_id;
+            private global::System.Data.DataColumn columnpat_id;
             
-            private global::System.Data.DataColumn columndiag_name;
+            private global::System.Data.DataColumn columnpat_kh_fname;
+            
+            private global::System.Data.DataColumn columnpat_kh_lname;
+            
+            private global::System.Data.DataColumn columnpat_fname;
+            
+            private global::System.Data.DataColumn columnpat_lname;
+            
+            private global::System.Data.DataColumn columnpat_gender;
+            
+            private global::System.Data.DataColumn columnpat_birthyear;
+            
+            private global::System.Data.DataColumn columnpat_job;
+            
+            private global::System.Data.DataColumn columnpat_address;
+            
+            private global::System.Data.DataColumn columnpat_app_date;
+            
+            private global::System.Data.DataColumn columnpat_nation;
+            
+            private global::System.Data.DataColumn columnpat_tel;
+            
+            private global::System.Data.DataColumn columnfullKhName;
+            
+            private global::System.Data.DataColumn columnfullname;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getAllDiagnoseDataTable() {
-                this.TableName = "fun_getAllDiagnose";
+            public fun_getAllPatientDataTable() {
+                this.TableName = "fun_getAllPatient";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -709,7 +1809,7 @@ namespace dentist {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal fun_getAllDiagnoseDataTable(global::System.Data.DataTable table) {
+            internal fun_getAllPatientDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -726,24 +1826,120 @@ namespace dentist {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected fun_getAllDiagnoseDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected fun_getAllPatientDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn diag_idColumn {
+            public global::System.Data.DataColumn pat_idColumn {
                 get {
-                    return this.columndiag_id;
+                    return this.columnpat_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn diag_nameColumn {
+            public global::System.Data.DataColumn pat_kh_fnameColumn {
                 get {
-                    return this.columndiag_name;
+                    return this.columnpat_kh_fname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_kh_lnameColumn {
+                get {
+                    return this.columnpat_kh_lname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_fnameColumn {
+                get {
+                    return this.columnpat_fname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_lnameColumn {
+                get {
+                    return this.columnpat_lname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_genderColumn {
+                get {
+                    return this.columnpat_gender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_birthyearColumn {
+                get {
+                    return this.columnpat_birthyear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_jobColumn {
+                get {
+                    return this.columnpat_job;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_addressColumn {
+                get {
+                    return this.columnpat_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_app_dateColumn {
+                get {
+                    return this.columnpat_app_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_nationColumn {
+                get {
+                    return this.columnpat_nation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_telColumn {
+                get {
+                    return this.columnpat_tel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fullKhNameColumn {
+                get {
+                    return this.columnfullKhName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fullnameColumn {
+                get {
+                    return this.columnfullname;
                 }
             }
             
@@ -758,53 +1954,58 @@ namespace dentist {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getAllDiagnoseRow this[int index] {
+            public fun_getAllPatientRow this[int index] {
                 get {
-                    return ((fun_getAllDiagnoseRow)(this.Rows[index]));
+                    return ((fun_getAllPatientRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fun_getAllDiagnoseRowChangeEventHandler fun_getAllDiagnoseRowChanging;
+            public event fun_getAllPatientRowChangeEventHandler fun_getAllPatientRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fun_getAllDiagnoseRowChangeEventHandler fun_getAllDiagnoseRowChanged;
+            public event fun_getAllPatientRowChangeEventHandler fun_getAllPatientRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fun_getAllDiagnoseRowChangeEventHandler fun_getAllDiagnoseRowDeleting;
+            public event fun_getAllPatientRowChangeEventHandler fun_getAllPatientRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fun_getAllDiagnoseRowChangeEventHandler fun_getAllDiagnoseRowDeleted;
+            public event fun_getAllPatientRowChangeEventHandler fun_getAllPatientRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addfun_getAllDiagnoseRow(fun_getAllDiagnoseRow row) {
+            public void Addfun_getAllPatientRow(fun_getAllPatientRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getAllDiagnoseRow Addfun_getAllDiagnoseRow(int diag_id, string diag_name) {
-                fun_getAllDiagnoseRow rowfun_getAllDiagnoseRow = ((fun_getAllDiagnoseRow)(this.NewRow()));
+            public fun_getAllPatientRow Addfun_getAllPatientRow(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, int pat_birthyear, string pat_job, string pat_address, System.DateTime pat_app_date, string pat_nation, string pat_tel, string fullKhName, string fullname) {
+                fun_getAllPatientRow rowfun_getAllPatientRow = ((fun_getAllPatientRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        diag_id,
-                        diag_name};
-                rowfun_getAllDiagnoseRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowfun_getAllDiagnoseRow);
-                return rowfun_getAllDiagnoseRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getAllDiagnoseRow FindBydiag_id(int diag_id) {
-                return ((fun_getAllDiagnoseRow)(this.Rows.Find(new object[] {
-                            diag_id})));
+                        pat_id,
+                        pat_kh_fname,
+                        pat_kh_lname,
+                        pat_fname,
+                        pat_lname,
+                        pat_gender,
+                        pat_birthyear,
+                        pat_job,
+                        pat_address,
+                        pat_app_date,
+                        pat_nation,
+                        pat_tel,
+                        fullKhName,
+                        fullname};
+                rowfun_getAllPatientRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfun_getAllPatientRow);
+                return rowfun_getAllPatientRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                fun_getAllDiagnoseDataTable cln = ((fun_getAllDiagnoseDataTable)(base.Clone()));
+                fun_getAllPatientDataTable cln = ((fun_getAllPatientDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -812,55 +2013,98 @@ namespace dentist {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new fun_getAllDiagnoseDataTable();
+                return new fun_getAllPatientDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columndiag_id = base.Columns["diag_id"];
-                this.columndiag_name = base.Columns["diag_name"];
+                this.columnpat_id = base.Columns["pat_id"];
+                this.columnpat_kh_fname = base.Columns["pat_kh_fname"];
+                this.columnpat_kh_lname = base.Columns["pat_kh_lname"];
+                this.columnpat_fname = base.Columns["pat_fname"];
+                this.columnpat_lname = base.Columns["pat_lname"];
+                this.columnpat_gender = base.Columns["pat_gender"];
+                this.columnpat_birthyear = base.Columns["pat_birthyear"];
+                this.columnpat_job = base.Columns["pat_job"];
+                this.columnpat_address = base.Columns["pat_address"];
+                this.columnpat_app_date = base.Columns["pat_app_date"];
+                this.columnpat_nation = base.Columns["pat_nation"];
+                this.columnpat_tel = base.Columns["pat_tel"];
+                this.columnfullKhName = base.Columns["fullKhName"];
+                this.columnfullname = base.Columns["fullname"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columndiag_id = new global::System.Data.DataColumn("diag_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndiag_id);
-                this.columndiag_name = new global::System.Data.DataColumn("diag_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndiag_name);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columndiag_id}, true));
-                this.columndiag_id.AllowDBNull = false;
-                this.columndiag_id.Unique = true;
-                this.columndiag_name.AllowDBNull = false;
-                this.columndiag_name.MaxLength = 2147483647;
+                this.columnpat_id = new global::System.Data.DataColumn("pat_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_id);
+                this.columnpat_kh_fname = new global::System.Data.DataColumn("pat_kh_fname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_kh_fname);
+                this.columnpat_kh_lname = new global::System.Data.DataColumn("pat_kh_lname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_kh_lname);
+                this.columnpat_fname = new global::System.Data.DataColumn("pat_fname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_fname);
+                this.columnpat_lname = new global::System.Data.DataColumn("pat_lname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_lname);
+                this.columnpat_gender = new global::System.Data.DataColumn("pat_gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_gender);
+                this.columnpat_birthyear = new global::System.Data.DataColumn("pat_birthyear", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_birthyear);
+                this.columnpat_job = new global::System.Data.DataColumn("pat_job", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_job);
+                this.columnpat_address = new global::System.Data.DataColumn("pat_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_address);
+                this.columnpat_app_date = new global::System.Data.DataColumn("pat_app_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_app_date);
+                this.columnpat_nation = new global::System.Data.DataColumn("pat_nation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_nation);
+                this.columnpat_tel = new global::System.Data.DataColumn("pat_tel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_tel);
+                this.columnfullKhName = new global::System.Data.DataColumn("fullKhName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfullKhName);
+                this.columnfullname = new global::System.Data.DataColumn("fullname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfullname);
+                this.columnpat_kh_fname.MaxLength = 2147483647;
+                this.columnpat_kh_lname.MaxLength = 2147483647;
+                this.columnpat_fname.MaxLength = 2147483647;
+                this.columnpat_lname.MaxLength = 2147483647;
+                this.columnpat_gender.MaxLength = 10;
+                this.columnpat_job.MaxLength = 2147483647;
+                this.columnpat_address.MaxLength = 2147483647;
+                this.columnpat_nation.MaxLength = 2147483647;
+                this.columnpat_tel.MaxLength = 2147483647;
+                this.columnfullKhName.ReadOnly = true;
+                this.columnfullKhName.MaxLength = 2147483647;
+                this.columnfullname.ReadOnly = true;
+                this.columnfullname.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getAllDiagnoseRow Newfun_getAllDiagnoseRow() {
-                return ((fun_getAllDiagnoseRow)(this.NewRow()));
+            public fun_getAllPatientRow Newfun_getAllPatientRow() {
+                return ((fun_getAllPatientRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new fun_getAllDiagnoseRow(builder);
+                return new fun_getAllPatientRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(fun_getAllDiagnoseRow);
+                return typeof(fun_getAllPatientRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.fun_getAllDiagnoseRowChanged != null)) {
-                    this.fun_getAllDiagnoseRowChanged(this, new fun_getAllDiagnoseRowChangeEvent(((fun_getAllDiagnoseRow)(e.Row)), e.Action));
+                if ((this.fun_getAllPatientRowChanged != null)) {
+                    this.fun_getAllPatientRowChanged(this, new fun_getAllPatientRowChangeEvent(((fun_getAllPatientRow)(e.Row)), e.Action));
                 }
             }
             
@@ -868,8 +2112,8 @@ namespace dentist {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.fun_getAllDiagnoseRowChanging != null)) {
-                    this.fun_getAllDiagnoseRowChanging(this, new fun_getAllDiagnoseRowChangeEvent(((fun_getAllDiagnoseRow)(e.Row)), e.Action));
+                if ((this.fun_getAllPatientRowChanging != null)) {
+                    this.fun_getAllPatientRowChanging(this, new fun_getAllPatientRowChangeEvent(((fun_getAllPatientRow)(e.Row)), e.Action));
                 }
             }
             
@@ -877,8 +2121,8 @@ namespace dentist {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.fun_getAllDiagnoseRowDeleted != null)) {
-                    this.fun_getAllDiagnoseRowDeleted(this, new fun_getAllDiagnoseRowChangeEvent(((fun_getAllDiagnoseRow)(e.Row)), e.Action));
+                if ((this.fun_getAllPatientRowDeleted != null)) {
+                    this.fun_getAllPatientRowDeleted(this, new fun_getAllPatientRowChangeEvent(((fun_getAllPatientRow)(e.Row)), e.Action));
                 }
             }
             
@@ -886,14 +2130,14 @@ namespace dentist {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.fun_getAllDiagnoseRowDeleting != null)) {
-                    this.fun_getAllDiagnoseRowDeleting(this, new fun_getAllDiagnoseRowChangeEvent(((fun_getAllDiagnoseRow)(e.Row)), e.Action));
+                if ((this.fun_getAllPatientRowDeleting != null)) {
+                    this.fun_getAllPatientRowDeleting(this, new fun_getAllPatientRowChangeEvent(((fun_getAllPatientRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removefun_getAllDiagnoseRow(fun_getAllDiagnoseRow row) {
+            public void Removefun_getAllPatientRow(fun_getAllPatientRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -920,7 +2164,7 @@ namespace dentist {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "fun_getAllDiagnoseDataTable";
+                attribute2.FixedValue = "fun_getAllPatientDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -958,6 +2202,951 @@ namespace dentist {
                 }
                 xs.Add(dsSchema);
                 return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fun_getPatientImageByIDDataTable : global::System.Data.TypedTableBase<fun_getPatientImageByIDRow> {
+            
+            private global::System.Data.DataColumn columnpat_id;
+            
+            private global::System.Data.DataColumn columnpat_image;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientImageByIDDataTable() {
+                this.TableName = "fun_getPatientImageByID";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getPatientImageByIDDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fun_getPatientImageByIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_idColumn {
+                get {
+                    return this.columnpat_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_imageColumn {
+                get {
+                    return this.columnpat_image;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientImageByIDRow this[int index] {
+                get {
+                    return ((fun_getPatientImageByIDRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientImageByIDRowChangeEventHandler fun_getPatientImageByIDRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientImageByIDRowChangeEventHandler fun_getPatientImageByIDRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientImageByIDRowChangeEventHandler fun_getPatientImageByIDRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientImageByIDRowChangeEventHandler fun_getPatientImageByIDRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addfun_getPatientImageByIDRow(fun_getPatientImageByIDRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientImageByIDRow Addfun_getPatientImageByIDRow(int pat_id, byte[] pat_image) {
+                fun_getPatientImageByIDRow rowfun_getPatientImageByIDRow = ((fun_getPatientImageByIDRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        pat_id,
+                        pat_image};
+                rowfun_getPatientImageByIDRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfun_getPatientImageByIDRow);
+                return rowfun_getPatientImageByIDRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientImageByIDRow FindBypat_id(int pat_id) {
+                return ((fun_getPatientImageByIDRow)(this.Rows.Find(new object[] {
+                            pat_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fun_getPatientImageByIDDataTable cln = ((fun_getPatientImageByIDDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fun_getPatientImageByIDDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnpat_id = base.Columns["pat_id"];
+                this.columnpat_image = base.Columns["pat_image"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnpat_id = new global::System.Data.DataColumn("pat_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_id);
+                this.columnpat_image = new global::System.Data.DataColumn("pat_image", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_image);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnpat_id}, true));
+                this.columnpat_id.AllowDBNull = false;
+                this.columnpat_id.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientImageByIDRow Newfun_getPatientImageByIDRow() {
+                return ((fun_getPatientImageByIDRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fun_getPatientImageByIDRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fun_getPatientImageByIDRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fun_getPatientImageByIDRowChanged != null)) {
+                    this.fun_getPatientImageByIDRowChanged(this, new fun_getPatientImageByIDRowChangeEvent(((fun_getPatientImageByIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fun_getPatientImageByIDRowChanging != null)) {
+                    this.fun_getPatientImageByIDRowChanging(this, new fun_getPatientImageByIDRowChangeEvent(((fun_getPatientImageByIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fun_getPatientImageByIDRowDeleted != null)) {
+                    this.fun_getPatientImageByIDRowDeleted(this, new fun_getPatientImageByIDRowChangeEvent(((fun_getPatientImageByIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fun_getPatientImageByIDRowDeleting != null)) {
+                    this.fun_getPatientImageByIDRowDeleting(this, new fun_getPatientImageByIDRowChangeEvent(((fun_getPatientImageByIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removefun_getPatientImageByIDRow(fun_getPatientImageByIDRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dentist_DS ds = new Dentist_DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fun_getPatientImageByIDDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fun_getPatientCurrentAppDateDataTable : global::System.Data.TypedTableBase<fun_getPatientCurrentAppDateRow> {
+            
+            private global::System.Data.DataColumn columnpat_id;
+            
+            private global::System.Data.DataColumn columnpat_kh_fname;
+            
+            private global::System.Data.DataColumn columnpat_kh_lname;
+            
+            private global::System.Data.DataColumn columnpat_fname;
+            
+            private global::System.Data.DataColumn columnpat_lname;
+            
+            private global::System.Data.DataColumn columnpat_gender;
+            
+            private global::System.Data.DataColumn columnpat_birthyear;
+            
+            private global::System.Data.DataColumn columnpat_job;
+            
+            private global::System.Data.DataColumn columnpat_address;
+            
+            private global::System.Data.DataColumn columnpat_app_date;
+            
+            private global::System.Data.DataColumn columnpat_nation;
+            
+            private global::System.Data.DataColumn columnpat_tel;
+            
+            private global::System.Data.DataColumn columnfullnameKh;
+            
+            private global::System.Data.DataColumn columnfullname;
+            
+            private global::System.Data.DataColumn columnpat_app_time;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientCurrentAppDateDataTable() {
+                this.TableName = "fun_getPatientCurrentAppDate";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getPatientCurrentAppDateDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fun_getPatientCurrentAppDateDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_idColumn {
+                get {
+                    return this.columnpat_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_kh_fnameColumn {
+                get {
+                    return this.columnpat_kh_fname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_kh_lnameColumn {
+                get {
+                    return this.columnpat_kh_lname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_fnameColumn {
+                get {
+                    return this.columnpat_fname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_lnameColumn {
+                get {
+                    return this.columnpat_lname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_genderColumn {
+                get {
+                    return this.columnpat_gender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_birthyearColumn {
+                get {
+                    return this.columnpat_birthyear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_jobColumn {
+                get {
+                    return this.columnpat_job;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_addressColumn {
+                get {
+                    return this.columnpat_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_app_dateColumn {
+                get {
+                    return this.columnpat_app_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_nationColumn {
+                get {
+                    return this.columnpat_nation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_telColumn {
+                get {
+                    return this.columnpat_tel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fullnameKhColumn {
+                get {
+                    return this.columnfullnameKh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fullnameColumn {
+                get {
+                    return this.columnfullname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pat_app_timeColumn {
+                get {
+                    return this.columnpat_app_time;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientCurrentAppDateRow this[int index] {
+                get {
+                    return ((fun_getPatientCurrentAppDateRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientCurrentAppDateRowChangeEventHandler fun_getPatientCurrentAppDateRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientCurrentAppDateRowChangeEventHandler fun_getPatientCurrentAppDateRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientCurrentAppDateRowChangeEventHandler fun_getPatientCurrentAppDateRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fun_getPatientCurrentAppDateRowChangeEventHandler fun_getPatientCurrentAppDateRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addfun_getPatientCurrentAppDateRow(fun_getPatientCurrentAppDateRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientCurrentAppDateRow Addfun_getPatientCurrentAppDateRow(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, int pat_birthyear, string pat_job, string pat_address, System.DateTime pat_app_date, string pat_nation, string pat_tel, string fullnameKh, string fullname, string pat_app_time) {
+                fun_getPatientCurrentAppDateRow rowfun_getPatientCurrentAppDateRow = ((fun_getPatientCurrentAppDateRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        pat_id,
+                        pat_kh_fname,
+                        pat_kh_lname,
+                        pat_fname,
+                        pat_lname,
+                        pat_gender,
+                        pat_birthyear,
+                        pat_job,
+                        pat_address,
+                        pat_app_date,
+                        pat_nation,
+                        pat_tel,
+                        fullnameKh,
+                        fullname,
+                        pat_app_time};
+                rowfun_getPatientCurrentAppDateRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfun_getPatientCurrentAppDateRow);
+                return rowfun_getPatientCurrentAppDateRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fun_getPatientCurrentAppDateDataTable cln = ((fun_getPatientCurrentAppDateDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fun_getPatientCurrentAppDateDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnpat_id = base.Columns["pat_id"];
+                this.columnpat_kh_fname = base.Columns["pat_kh_fname"];
+                this.columnpat_kh_lname = base.Columns["pat_kh_lname"];
+                this.columnpat_fname = base.Columns["pat_fname"];
+                this.columnpat_lname = base.Columns["pat_lname"];
+                this.columnpat_gender = base.Columns["pat_gender"];
+                this.columnpat_birthyear = base.Columns["pat_birthyear"];
+                this.columnpat_job = base.Columns["pat_job"];
+                this.columnpat_address = base.Columns["pat_address"];
+                this.columnpat_app_date = base.Columns["pat_app_date"];
+                this.columnpat_nation = base.Columns["pat_nation"];
+                this.columnpat_tel = base.Columns["pat_tel"];
+                this.columnfullnameKh = base.Columns["fullnameKh"];
+                this.columnfullname = base.Columns["fullname"];
+                this.columnpat_app_time = base.Columns["pat_app_time"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnpat_id = new global::System.Data.DataColumn("pat_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_id);
+                this.columnpat_kh_fname = new global::System.Data.DataColumn("pat_kh_fname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_kh_fname);
+                this.columnpat_kh_lname = new global::System.Data.DataColumn("pat_kh_lname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_kh_lname);
+                this.columnpat_fname = new global::System.Data.DataColumn("pat_fname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_fname);
+                this.columnpat_lname = new global::System.Data.DataColumn("pat_lname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_lname);
+                this.columnpat_gender = new global::System.Data.DataColumn("pat_gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_gender);
+                this.columnpat_birthyear = new global::System.Data.DataColumn("pat_birthyear", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_birthyear);
+                this.columnpat_job = new global::System.Data.DataColumn("pat_job", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_job);
+                this.columnpat_address = new global::System.Data.DataColumn("pat_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_address);
+                this.columnpat_app_date = new global::System.Data.DataColumn("pat_app_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_app_date);
+                this.columnpat_nation = new global::System.Data.DataColumn("pat_nation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_nation);
+                this.columnpat_tel = new global::System.Data.DataColumn("pat_tel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_tel);
+                this.columnfullnameKh = new global::System.Data.DataColumn("fullnameKh", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfullnameKh);
+                this.columnfullname = new global::System.Data.DataColumn("fullname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfullname);
+                this.columnpat_app_time = new global::System.Data.DataColumn("pat_app_time", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpat_app_time);
+                this.columnpat_kh_fname.MaxLength = 2147483647;
+                this.columnpat_kh_lname.MaxLength = 2147483647;
+                this.columnpat_fname.MaxLength = 2147483647;
+                this.columnpat_lname.MaxLength = 2147483647;
+                this.columnpat_gender.MaxLength = 10;
+                this.columnpat_job.MaxLength = 2147483647;
+                this.columnpat_address.MaxLength = 2147483647;
+                this.columnpat_nation.MaxLength = 2147483647;
+                this.columnpat_tel.MaxLength = 2147483647;
+                this.columnfullnameKh.ReadOnly = true;
+                this.columnfullnameKh.MaxLength = 2147483647;
+                this.columnfullname.ReadOnly = true;
+                this.columnfullname.MaxLength = 2147483647;
+                this.columnpat_app_time.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientCurrentAppDateRow Newfun_getPatientCurrentAppDateRow() {
+                return ((fun_getPatientCurrentAppDateRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fun_getPatientCurrentAppDateRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fun_getPatientCurrentAppDateRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fun_getPatientCurrentAppDateRowChanged != null)) {
+                    this.fun_getPatientCurrentAppDateRowChanged(this, new fun_getPatientCurrentAppDateRowChangeEvent(((fun_getPatientCurrentAppDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fun_getPatientCurrentAppDateRowChanging != null)) {
+                    this.fun_getPatientCurrentAppDateRowChanging(this, new fun_getPatientCurrentAppDateRowChangeEvent(((fun_getPatientCurrentAppDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fun_getPatientCurrentAppDateRowDeleted != null)) {
+                    this.fun_getPatientCurrentAppDateRowDeleted(this, new fun_getPatientCurrentAppDateRowChangeEvent(((fun_getPatientCurrentAppDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fun_getPatientCurrentAppDateRowDeleting != null)) {
+                    this.fun_getPatientCurrentAppDateRowDeleting(this, new fun_getPatientCurrentAppDateRowChangeEvent(((fun_getPatientCurrentAppDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removefun_getPatientCurrentAppDateRow(fun_getPatientCurrentAppDateRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dentist_DS ds = new Dentist_DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fun_getPatientCurrentAppDateDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class fun_getAllMedicalHistoryRow : global::System.Data.DataRow {
+            
+            private fun_getAllMedicalHistoryDataTable tablefun_getAllMedicalHistory;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getAllMedicalHistoryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefun_getAllMedicalHistory = ((fun_getAllMedicalHistoryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int md_id {
+                get {
+                    return ((int)(this[this.tablefun_getAllMedicalHistory.md_idColumn]));
+                }
+                set {
+                    this[this.tablefun_getAllMedicalHistory.md_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string md_name {
+                get {
+                    return ((string)(this[this.tablefun_getAllMedicalHistory.md_nameColumn]));
+                }
+                set {
+                    this[this.tablefun_getAllMedicalHistory.md_nameColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class fun_getActiveMedicalHistoryForSpecificPaientRow : global::System.Data.DataRow {
+            
+            private fun_getActiveMedicalHistoryForSpecificPaientDataTable tablefun_getActiveMedicalHistoryForSpecificPaient;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getActiveMedicalHistoryForSpecificPaientRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefun_getActiveMedicalHistoryForSpecificPaient = ((fun_getActiveMedicalHistoryForSpecificPaientDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int pat_id {
+                get {
+                    return ((int)(this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.pat_idColumn]));
+                }
+                set {
+                    this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.pat_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string md_id {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'md_id\' in table \'fun_getActiveMedicalHistoryForSpecificPaie" +
+                                "nt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string md_description {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'md_description\' in table \'fun_getActiveMedicalHistoryForSpe" +
+                                "cificPaient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string md_status {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'md_status\' in table \'fun_getActiveMedicalHistoryForSpecific" +
+                                "Paient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string md_name {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'md_name\' in table \'fun_getActiveMedicalHistoryForSpecificPa" +
+                                "ient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismd_idNull() {
+                return this.IsNull(this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmd_idNull() {
+                this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismd_descriptionNull() {
+                return this.IsNull(this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmd_descriptionNull() {
+                this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismd_statusNull() {
+                return this.IsNull(this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmd_statusNull() {
+                this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismd_nameNull() {
+                return this.IsNull(this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmd_nameNull() {
+                this[this.tablefun_getActiveMedicalHistoryForSpecificPaient.md_nameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class fun_getMedicalHistoryForSpecificPatientRow : global::System.Data.DataRow {
+            
+            private fun_getMedicalHistoryForSpecificPatientDataTable tablefun_getMedicalHistoryForSpecificPatient;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getMedicalHistoryForSpecificPatientRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefun_getMedicalHistoryForSpecificPatient = ((fun_getMedicalHistoryForSpecificPatientDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int md_id {
+                get {
+                    return ((int)(this[this.tablefun_getMedicalHistoryForSpecificPatient.md_idColumn]));
+                }
+                set {
+                    this[this.tablefun_getMedicalHistoryForSpecificPatient.md_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string md_name {
+                get {
+                    return ((string)(this[this.tablefun_getMedicalHistoryForSpecificPatient.md_nameColumn]));
+                }
+                set {
+                    this[this.tablefun_getMedicalHistoryForSpecificPatient.md_nameColumn] = value;
+                }
             }
         }
         
@@ -1121,17 +3310,65 @@ namespace dentist {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] pat_image {
+            public System.DateTime pat_app_date {
                 get {
                     try {
-                        return ((byte[])(this[this.tablefun_getPatientByID.pat_imageColumn]));
+                        return ((global::System.DateTime)(this[this.tablefun_getPatientByID.pat_app_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pat_image\' in table \'fun_getPatientByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_app_date\' in table \'fun_getPatientByID\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablefun_getPatientByID.pat_imageColumn] = value;
+                    this[this.tablefun_getPatientByID.pat_app_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_nation {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientByID.pat_nationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_nation\' in table \'fun_getPatientByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientByID.pat_nationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_tel {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientByID.pat_telColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_tel\' in table \'fun_getPatientByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientByID.pat_telColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_app_time {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientByID.pat_app_timeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_app_time\' in table \'fun_getPatientByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientByID.pat_app_timeColumn] = value;
                 }
             }
             
@@ -1245,50 +3482,1061 @@ namespace dentist {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Ispat_imageNull() {
-                return this.IsNull(this.tablefun_getPatientByID.pat_imageColumn);
+            public bool Ispat_app_dateNull() {
+                return this.IsNull(this.tablefun_getPatientByID.pat_app_dateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setpat_imageNull() {
-                this[this.tablefun_getPatientByID.pat_imageColumn] = global::System.Convert.DBNull;
+            public void Setpat_app_dateNull() {
+                this[this.tablefun_getPatientByID.pat_app_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_nationNull() {
+                return this.IsNull(this.tablefun_getPatientByID.pat_nationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_nationNull() {
+                this[this.tablefun_getPatientByID.pat_nationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_telNull() {
+                return this.IsNull(this.tablefun_getPatientByID.pat_telColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_telNull() {
+                this[this.tablefun_getPatientByID.pat_telColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_app_timeNull() {
+                return this.IsNull(this.tablefun_getPatientByID.pat_app_timeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_app_timeNull() {
+                this[this.tablefun_getPatientByID.pat_app_timeColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class fun_getAllDiagnoseRow : global::System.Data.DataRow {
+        public partial class fun_getAllPatientRow : global::System.Data.DataRow {
             
-            private fun_getAllDiagnoseDataTable tablefun_getAllDiagnose;
+            private fun_getAllPatientDataTable tablefun_getAllPatient;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal fun_getAllDiagnoseRow(global::System.Data.DataRowBuilder rb) : 
+            internal fun_getAllPatientRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablefun_getAllDiagnose = ((fun_getAllDiagnoseDataTable)(this.Table));
+                this.tablefun_getAllPatient = ((fun_getAllPatientDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int diag_id {
+            public int pat_id {
                 get {
-                    return ((int)(this[this.tablefun_getAllDiagnose.diag_idColumn]));
+                    try {
+                        return ((int)(this[this.tablefun_getAllPatient.pat_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_id\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablefun_getAllDiagnose.diag_idColumn] = value;
+                    this[this.tablefun_getAllPatient.pat_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string diag_name {
+            public string pat_kh_fname {
                 get {
-                    return ((string)(this[this.tablefun_getAllDiagnose.diag_nameColumn]));
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_kh_fnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_kh_fname\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablefun_getAllDiagnose.diag_nameColumn] = value;
+                    this[this.tablefun_getAllPatient.pat_kh_fnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_kh_lname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_kh_lnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_kh_lname\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_kh_lnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_fname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_fnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_fname\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_fnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_lname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_lnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_lname\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_lnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_gender {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_genderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_gender\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_genderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int pat_birthyear {
+                get {
+                    try {
+                        return ((int)(this[this.tablefun_getAllPatient.pat_birthyearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_birthyear\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_birthyearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_job {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_jobColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_job\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_jobColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_address {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_address\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime pat_app_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablefun_getAllPatient.pat_app_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_app_date\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_app_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_nation {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_nationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_nation\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_nationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_tel {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.pat_telColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_tel\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.pat_telColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fullKhName {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.fullKhNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fullKhName\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.fullKhNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fullname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getAllPatient.fullnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fullname\' in table \'fun_getAllPatient\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getAllPatient.fullnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_idNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_idNull() {
+                this[this.tablefun_getAllPatient.pat_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_kh_fnameNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_kh_fnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_kh_fnameNull() {
+                this[this.tablefun_getAllPatient.pat_kh_fnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_kh_lnameNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_kh_lnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_kh_lnameNull() {
+                this[this.tablefun_getAllPatient.pat_kh_lnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_fnameNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_fnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_fnameNull() {
+                this[this.tablefun_getAllPatient.pat_fnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_lnameNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_lnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_lnameNull() {
+                this[this.tablefun_getAllPatient.pat_lnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_genderNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_genderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_genderNull() {
+                this[this.tablefun_getAllPatient.pat_genderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_birthyearNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_birthyearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_birthyearNull() {
+                this[this.tablefun_getAllPatient.pat_birthyearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_jobNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_jobColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_jobNull() {
+                this[this.tablefun_getAllPatient.pat_jobColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_addressNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_addressNull() {
+                this[this.tablefun_getAllPatient.pat_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_app_dateNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_app_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_app_dateNull() {
+                this[this.tablefun_getAllPatient.pat_app_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_nationNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_nationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_nationNull() {
+                this[this.tablefun_getAllPatient.pat_nationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_telNull() {
+                return this.IsNull(this.tablefun_getAllPatient.pat_telColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_telNull() {
+                this[this.tablefun_getAllPatient.pat_telColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfullKhNameNull() {
+                return this.IsNull(this.tablefun_getAllPatient.fullKhNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfullKhNameNull() {
+                this[this.tablefun_getAllPatient.fullKhNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfullnameNull() {
+                return this.IsNull(this.tablefun_getAllPatient.fullnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfullnameNull() {
+                this[this.tablefun_getAllPatient.fullnameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class fun_getPatientImageByIDRow : global::System.Data.DataRow {
+            
+            private fun_getPatientImageByIDDataTable tablefun_getPatientImageByID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getPatientImageByIDRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefun_getPatientImageByID = ((fun_getPatientImageByIDDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int pat_id {
+                get {
+                    return ((int)(this[this.tablefun_getPatientImageByID.pat_idColumn]));
+                }
+                set {
+                    this[this.tablefun_getPatientImageByID.pat_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] pat_image {
+                get {
+                    try {
+                        return ((byte[])(this[this.tablefun_getPatientImageByID.pat_imageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_image\' in table \'fun_getPatientImageByID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientImageByID.pat_imageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_imageNull() {
+                return this.IsNull(this.tablefun_getPatientImageByID.pat_imageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_imageNull() {
+                this[this.tablefun_getPatientImageByID.pat_imageColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class fun_getPatientCurrentAppDateRow : global::System.Data.DataRow {
+            
+            private fun_getPatientCurrentAppDateDataTable tablefun_getPatientCurrentAppDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fun_getPatientCurrentAppDateRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefun_getPatientCurrentAppDate = ((fun_getPatientCurrentAppDateDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int pat_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablefun_getPatientCurrentAppDate.pat_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_id\' in table \'fun_getPatientCurrentAppDate\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_kh_fname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_kh_fnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_kh_fname\' in table \'fun_getPatientCurrentAppDate\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_kh_fnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_kh_lname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_kh_lnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_kh_lname\' in table \'fun_getPatientCurrentAppDate\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_kh_lnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_fname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_fnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_fname\' in table \'fun_getPatientCurrentAppDate\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_fnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_lname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_lnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_lname\' in table \'fun_getPatientCurrentAppDate\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_lnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_gender {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_genderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_gender\' in table \'fun_getPatientCurrentAppDate\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_genderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int pat_birthyear {
+                get {
+                    try {
+                        return ((int)(this[this.tablefun_getPatientCurrentAppDate.pat_birthyearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_birthyear\' in table \'fun_getPatientCurrentAppDate\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_birthyearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_job {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_jobColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_job\' in table \'fun_getPatientCurrentAppDate\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_jobColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_address {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_address\' in table \'fun_getPatientCurrentAppDate\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime pat_app_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablefun_getPatientCurrentAppDate.pat_app_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_app_date\' in table \'fun_getPatientCurrentAppDate\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_app_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_nation {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_nationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_nation\' in table \'fun_getPatientCurrentAppDate\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_nationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_tel {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_telColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_tel\' in table \'fun_getPatientCurrentAppDate\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_telColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fullnameKh {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.fullnameKhColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fullnameKh\' in table \'fun_getPatientCurrentAppDate\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.fullnameKhColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fullname {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.fullnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fullname\' in table \'fun_getPatientCurrentAppDate\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.fullnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pat_app_time {
+                get {
+                    try {
+                        return ((string)(this[this.tablefun_getPatientCurrentAppDate.pat_app_timeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pat_app_time\' in table \'fun_getPatientCurrentAppDate\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablefun_getPatientCurrentAppDate.pat_app_timeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_idNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_idNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_kh_fnameNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_kh_fnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_kh_fnameNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_kh_fnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_kh_lnameNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_kh_lnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_kh_lnameNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_kh_lnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_fnameNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_fnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_fnameNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_fnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_lnameNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_lnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_lnameNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_lnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_genderNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_genderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_genderNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_genderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_birthyearNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_birthyearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_birthyearNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_birthyearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_jobNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_jobColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_jobNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_jobColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_addressNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_addressNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_app_dateNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_app_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_app_dateNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_app_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_nationNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_nationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_nationNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_nationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_telNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_telColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_telNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_telColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfullnameKhNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.fullnameKhColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfullnameKhNull() {
+                this[this.tablefun_getPatientCurrentAppDate.fullnameKhColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfullnameNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.fullnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfullnameNull() {
+                this[this.tablefun_getPatientCurrentAppDate.fullnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispat_app_timeNull() {
+                return this.IsNull(this.tablefun_getPatientCurrentAppDate.pat_app_timeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpat_app_timeNull() {
+                this[this.tablefun_getPatientCurrentAppDate.pat_app_timeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fun_getAllMedicalHistoryRowChangeEvent : global::System.EventArgs {
+            
+            private fun_getAllMedicalHistoryRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getAllMedicalHistoryRowChangeEvent(fun_getAllMedicalHistoryRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getAllMedicalHistoryRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fun_getActiveMedicalHistoryForSpecificPaientRowChangeEvent : global::System.EventArgs {
+            
+            private fun_getActiveMedicalHistoryForSpecificPaientRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getActiveMedicalHistoryForSpecificPaientRowChangeEvent(fun_getActiveMedicalHistoryForSpecificPaientRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getActiveMedicalHistoryForSpecificPaientRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fun_getMedicalHistoryForSpecificPatientRowChangeEvent : global::System.EventArgs {
+            
+            private fun_getMedicalHistoryForSpecificPatientRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getMedicalHistoryForSpecificPatientRowChangeEvent(fun_getMedicalHistoryForSpecificPatientRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getMedicalHistoryForSpecificPatientRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
                 }
             }
         }
@@ -1331,22 +4579,90 @@ namespace dentist {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class fun_getAllDiagnoseRowChangeEvent : global::System.EventArgs {
+        public class fun_getAllPatientRowChangeEvent : global::System.EventArgs {
             
-            private fun_getAllDiagnoseRow eventRow;
+            private fun_getAllPatientRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getAllDiagnoseRowChangeEvent(fun_getAllDiagnoseRow row, global::System.Data.DataRowAction action) {
+            public fun_getAllPatientRowChangeEvent(fun_getAllPatientRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fun_getAllDiagnoseRow Row {
+            public fun_getAllPatientRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fun_getPatientImageByIDRowChangeEvent : global::System.EventArgs {
+            
+            private fun_getPatientImageByIDRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientImageByIDRowChangeEvent(fun_getPatientImageByIDRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientImageByIDRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fun_getPatientCurrentAppDateRowChangeEvent : global::System.EventArgs {
+            
+            private fun_getPatientCurrentAppDateRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientCurrentAppDateRowChangeEvent(fun_getPatientCurrentAppDateRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fun_getPatientCurrentAppDateRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1364,6 +4680,523 @@ namespace dentist {
 }
 namespace dentist.Dentist_DSTableAdapters {
     
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fun_getAllMedicalHistoryTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fun_getAllMedicalHistoryTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fun_getAllMedicalHistory";
+            tableMapping.ColumnMappings.Add("md_id", "md_id");
+            tableMapping.ColumnMappings.Add("md_name", "md_name");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::dentist.Properties.Settings.Default.DentistConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT fun_getAllMedicalHistory_1.*\r\nFROM     dbo.fun_getAllMedicalHistory() AS f" +
+                "un_getAllMedicalHistory_1";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dentist_DS.fun_getAllMedicalHistoryDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dentist_DS.fun_getAllMedicalHistoryDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Dentist_DS.fun_getAllMedicalHistoryDataTable dataTable = new Dentist_DS.fun_getAllMedicalHistoryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fun_getActiveMedicalHistoryForSpecificPaientTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fun_getActiveMedicalHistoryForSpecificPaientTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fun_getActiveMedicalHistoryForSpecificPaient";
+            tableMapping.ColumnMappings.Add("pat_id", "pat_id");
+            tableMapping.ColumnMappings.Add("md_id", "md_id");
+            tableMapping.ColumnMappings.Add("md_description", "md_description");
+            tableMapping.ColumnMappings.Add("md_status", "md_status");
+            tableMapping.ColumnMappings.Add("md_name", "md_name");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::dentist.Properties.Settings.Default.DentistConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        pat_id, md_id, md_description, md_status, md_name\r\nFROM            " +
+                "dbo.fun_getActiveMedicalHistoryForSpecificPaient(@pat_id) AS fun_getActiveMedica" +
+                "lHistoryForSpecificPaient_1";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dentist_DS.fun_getActiveMedicalHistoryForSpecificPaientDataTable dataTable, int pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dentist_DS.fun_getActiveMedicalHistoryForSpecificPaientDataTable GetData(int pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id));
+            Dentist_DS.fun_getActiveMedicalHistoryForSpecificPaientDataTable dataTable = new Dentist_DS.fun_getActiveMedicalHistoryForSpecificPaientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fun_getMedicalHistoryForSpecificPatientTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fun_getMedicalHistoryForSpecificPatientTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fun_getMedicalHistoryForSpecificPatient";
+            tableMapping.ColumnMappings.Add("md_id", "md_id");
+            tableMapping.ColumnMappings.Add("md_name", "md_name");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::dentist.Properties.Settings.Default.DentistConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        md_id, md_name\r\nFROM            dbo.fun_getMedicalHistoryForSpecifi" +
+                "cPatient(@pat_id) AS fun_getMedicalHistoryForSpecificPatient_1";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dentist_DS.fun_getMedicalHistoryForSpecificPatientDataTable dataTable, int pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dentist_DS.fun_getMedicalHistoryForSpecificPatientDataTable GetData(int pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id));
+            Dentist_DS.fun_getMedicalHistoryForSpecificPatientDataTable dataTable = new Dentist_DS.fun_getMedicalHistoryForSpecificPatientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -1495,7 +5328,10 @@ namespace dentist.Dentist_DSTableAdapters {
             tableMapping.ColumnMappings.Add("pat_birthyear", "pat_birthyear");
             tableMapping.ColumnMappings.Add("pat_job", "pat_job");
             tableMapping.ColumnMappings.Add("pat_address", "pat_address");
-            tableMapping.ColumnMappings.Add("pat_image", "pat_image");
+            tableMapping.ColumnMappings.Add("pat_app_date", "pat_app_date");
+            tableMapping.ColumnMappings.Add("pat_nation", "pat_nation");
+            tableMapping.ColumnMappings.Add("pat_tel", "pat_tel");
+            tableMapping.ColumnMappings.Add("pat_app_time", "pat_app_time");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1513,8 +5349,9 @@ namespace dentist.Dentist_DSTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        pat_id, pat_kh_fname, pat_kh_lname, pat_fname, pat_lname, pat_gende" +
-                "r, pat_birthyear, pat_job, pat_address, pat_image\r\nFROM            dbo.fun_getPa" +
-                "tientByID(@pat_id) AS fun_getPatientByID_1";
+                "r, pat_birthyear, pat_job, pat_address, pat_app_date, pat_nation, pat_tel, pat_a" +
+                "pp_time\r\nFROM            dbo.fun_getPatientByID(@pat_id) AS fun_getPatientByID_1" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1555,7 +5392,7 @@ namespace dentist.Dentist_DSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class fun_getAllDiagnoseTableAdapter : global::System.ComponentModel.Component {
+    public partial class fun_getAllPatientTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1569,7 +5406,7 @@ namespace dentist.Dentist_DSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public fun_getAllDiagnoseTableAdapter() {
+        public fun_getAllPatientTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1666,9 +5503,367 @@ namespace dentist.Dentist_DSTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "fun_getAllDiagnose";
-            tableMapping.ColumnMappings.Add("diag_id", "diag_id");
-            tableMapping.ColumnMappings.Add("diag_name", "diag_name");
+            tableMapping.DataSetTable = "fun_getAllPatient";
+            tableMapping.ColumnMappings.Add("pat_id", "pat_id");
+            tableMapping.ColumnMappings.Add("pat_kh_fname", "pat_kh_fname");
+            tableMapping.ColumnMappings.Add("pat_kh_lname", "pat_kh_lname");
+            tableMapping.ColumnMappings.Add("pat_fname", "pat_fname");
+            tableMapping.ColumnMappings.Add("pat_lname", "pat_lname");
+            tableMapping.ColumnMappings.Add("pat_gender", "pat_gender");
+            tableMapping.ColumnMappings.Add("pat_birthyear", "pat_birthyear");
+            tableMapping.ColumnMappings.Add("pat_job", "pat_job");
+            tableMapping.ColumnMappings.Add("pat_address", "pat_address");
+            tableMapping.ColumnMappings.Add("pat_app_date", "pat_app_date");
+            tableMapping.ColumnMappings.Add("pat_nation", "pat_nation");
+            tableMapping.ColumnMappings.Add("pat_tel", "pat_tel");
+            tableMapping.ColumnMappings.Add("fullKhName", "fullKhName");
+            tableMapping.ColumnMappings.Add("fullname", "fullname");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::dentist.Properties.Settings.Default.DentistConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        pat_kh_fname + ' ' + pat_kh_lname AS fullKhName, pat_fname + ' ' + pat_lname AS fullname, pat_id, pat_kh_fname, pat_kh_lname, pat_fname, pat_lname, pat_gender, pat_birthyear, pat_job, pat_address, pat_app_date, 
+                         pat_nation, pat_tel
+FROM            dbo.fun_getAllPatient() AS fun_getAllPatient_1";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        pat_kh_fname + ' ' + pat_kh_lname AS fullKhName, pat_fname + ' ' + pat_lname AS fullname, pat_address, pat_app_date, pat_birthyear, pat_fname, pat_gender, pat_id, pat_job, pat_kh_fname, pat_kh_lname, pat_lname, 
+                         pat_nation, pat_tel
+FROM            dbo.fun_getAllPatient() AS fun_getAllPatient_1
+WHERE        (pat_id = @pat_id)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "pat_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        pat_kh_fname + ' ' + pat_kh_lname AS fullKhName, pat_fname + ' ' + pat_lname AS fullname, pat_address, pat_app_date, pat_birthyear, pat_fname, pat_gender, pat_id, pat_job, pat_kh_fname, pat_kh_lname, pat_lname, 
+                         pat_nation, pat_tel
+FROM            dbo.fun_getAllPatient() AS fun_getAllPatient_1
+WHERE        (pat_lname LIKE '%' + @pat_name + '%')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_name", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "pat_lname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        pat_kh_fname + ' ' + pat_kh_lname AS fullKhName, pat_fname + ' ' + pat_lname AS fullname, pat_address, pat_app_date, pat_birthyear, pat_fname, pat_gender, pat_id, pat_job, pat_kh_fname, pat_kh_lname, pat_lname, 
+                         pat_nation, pat_tel
+FROM            dbo.fun_getAllPatient() AS fun_getAllPatient_1
+WHERE        (pat_kh_lname LIKE '%' + @pat_name + '%')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_name", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "pat_kh_lname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        pat_kh_fname + ' ' + pat_kh_lname AS fullKhName, pat_fname + ' ' + pat_lname AS fullname, pat_address, pat_app_date, pat_birthyear, pat_fname, pat_gender, pat_id, pat_job, pat_kh_fname, pat_kh_lname, pat_lname, 
+                         pat_nation, pat_tel
+FROM            dbo.fun_getAllPatient() AS fun_getAllPatient_1
+WHERE        (pat_tel LIKE '%' + @pat_tel + '%')";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_tel", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "pat_tel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dentist_DS.fun_getAllPatientDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dentist_DS.fun_getAllPatientDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Dentist_DS.fun_getAllPatientDataTable dataTable = new Dentist_DS.fun_getAllPatientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatId(Dentist_DS.fun_getAllPatientDataTable dataTable, global::System.Nullable<int> pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((pat_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dentist_DS.fun_getAllPatientDataTable GetDataByPatId(global::System.Nullable<int> pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((pat_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            Dentist_DS.fun_getAllPatientDataTable dataTable = new Dentist_DS.fun_getAllPatientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatLatinName(Dentist_DS.fun_getAllPatientDataTable dataTable, string pat_name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((pat_name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pat_name));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dentist_DS.fun_getAllPatientDataTable GetDataByPatLatinName(string pat_name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((pat_name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pat_name));
+            }
+            Dentist_DS.fun_getAllPatientDataTable dataTable = new Dentist_DS.fun_getAllPatientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatName(Dentist_DS.fun_getAllPatientDataTable dataTable, string pat_name) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((pat_name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pat_name));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dentist_DS.fun_getAllPatientDataTable GetDataByPatName(string pat_name) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((pat_name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pat_name));
+            }
+            Dentist_DS.fun_getAllPatientDataTable dataTable = new Dentist_DS.fun_getAllPatientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatTel(Dentist_DS.fun_getAllPatientDataTable dataTable, string pat_tel) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((pat_tel == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pat_tel));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dentist_DS.fun_getAllPatientDataTable GetDataByPatTel(string pat_tel) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((pat_tel == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pat_tel));
+            }
+            Dentist_DS.fun_getAllPatientDataTable dataTable = new Dentist_DS.fun_getAllPatientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fun_getPatientImageByIDTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fun_getPatientImageByIDTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fun_getPatientImageByID";
+            tableMapping.ColumnMappings.Add("pat_id", "pat_id");
+            tableMapping.ColumnMappings.Add("pat_image", "pat_image");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1685,8 +5880,194 @@ namespace dentist.Dentist_DSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        fun_getAllDiagnose_1.*\r\nFROM            dbo.fun_getAllDiagnose() AS" +
-                " fun_getAllDiagnose_1";
+            this._commandCollection[0].CommandText = "SELECT        pat_id, pat_image\r\nFROM            dbo.fun_getPatientImageByID(@pat" +
+                "_id) AS fun_getPatientImageByID_1";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pat_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dentist_DS.fun_getPatientImageByIDDataTable dataTable, int pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dentist_DS.fun_getPatientImageByIDDataTable GetData(int pat_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pat_id));
+            Dentist_DS.fun_getPatientImageByIDDataTable dataTable = new Dentist_DS.fun_getPatientImageByIDDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fun_getPatientCurrentAppDateTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fun_getPatientCurrentAppDateTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fun_getPatientCurrentAppDate";
+            tableMapping.ColumnMappings.Add("pat_id", "pat_id");
+            tableMapping.ColumnMappings.Add("pat_kh_fname", "pat_kh_fname");
+            tableMapping.ColumnMappings.Add("pat_kh_lname", "pat_kh_lname");
+            tableMapping.ColumnMappings.Add("pat_fname", "pat_fname");
+            tableMapping.ColumnMappings.Add("pat_lname", "pat_lname");
+            tableMapping.ColumnMappings.Add("pat_gender", "pat_gender");
+            tableMapping.ColumnMappings.Add("pat_birthyear", "pat_birthyear");
+            tableMapping.ColumnMappings.Add("pat_job", "pat_job");
+            tableMapping.ColumnMappings.Add("pat_address", "pat_address");
+            tableMapping.ColumnMappings.Add("pat_app_date", "pat_app_date");
+            tableMapping.ColumnMappings.Add("pat_nation", "pat_nation");
+            tableMapping.ColumnMappings.Add("pat_tel", "pat_tel");
+            tableMapping.ColumnMappings.Add("fullnameKh", "fullnameKh");
+            tableMapping.ColumnMappings.Add("fullname", "fullname");
+            tableMapping.ColumnMappings.Add("pat_app_time", "pat_app_time");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::dentist.Properties.Settings.Default.DentistConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        pat_kh_fname + ' ' + pat_kh_lname AS fullnameKh, pat_fname + ' ' + pat_lname AS fullname, pat_id, pat_kh_fname, pat_kh_lname, pat_fname, pat_lname, pat_gender, pat_birthyear, pat_job, pat_address, pat_app_date, 
+                         pat_nation, pat_tel, pat_app_time
+FROM            dbo.fun_getPatientCurrentAppDate() AS fun_getPatientCurrentAppDate_1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1694,7 +6075,7 @@ namespace dentist.Dentist_DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Dentist_DS.fun_getAllDiagnoseDataTable dataTable) {
+        public virtual int Fill(Dentist_DS.fun_getPatientCurrentAppDateDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1707,9 +6088,9 @@ namespace dentist.Dentist_DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Dentist_DS.fun_getAllDiagnoseDataTable GetData() {
+        public virtual Dentist_DS.fun_getPatientCurrentAppDateDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Dentist_DS.fun_getAllDiagnoseDataTable dataTable = new Dentist_DS.fun_getAllDiagnoseDataTable();
+            Dentist_DS.fun_getPatientCurrentAppDateDataTable dataTable = new Dentist_DS.fun_getPatientCurrentAppDateDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

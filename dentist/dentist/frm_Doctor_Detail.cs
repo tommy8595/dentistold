@@ -18,8 +18,6 @@ namespace dentist
             InitializeComponent();
         }
 
-        Thread th;
-
         private void btn_Doc_Det_Back_Click(object sender, EventArgs e)
         {
             this.Close();
