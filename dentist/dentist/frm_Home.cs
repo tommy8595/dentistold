@@ -15,6 +15,7 @@ namespace dentist
     {
         public frm_Home()
         {
+            
             InitializeComponent();
         }
 
@@ -121,6 +122,26 @@ namespace dentist
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
+            if(GlobalVariable._user_role=="admin")
+            {
+
+            }
+            else if(GlobalVariable._user_role=="doctor")
+            {
+
+            }
+            else if(GlobalVariable._user_role== "receptionist")
+            {
+                btn_Expense.Enabled = false;
+                btn_Staff.Enabled= false;
+                btn_Money.Enabled = false;
+
+            }
+            else
+            {
+                
+
+            }
             // TODO: This line of code loads data into the 'dentist_DS.fun_getPatientCurrentAppDate' table. You can move, or remove it, as needed.
             this.fun_getPatientCurrentAppDateTableAdapter.Fill(this.dentist_DS.fun_getPatientCurrentAppDate);
         }
@@ -136,6 +157,11 @@ namespace dentist
         private void frm_Home_Activated(object sender, EventArgs e)
         {
             this.fun_getPatientCurrentAppDateTableAdapter.Fill(this.dentist_DS.fun_getPatientCurrentAppDate);
+        }
+
+        private void pn_Home_Paint(object sender, PaintEventArgs e)
+        {
+            label1.Text = GlobalVariable._user_data.Rows[0]["emp_id"].ToString();
         }
     }
 }
