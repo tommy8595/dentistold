@@ -127,6 +127,7 @@ namespace dentist
 
         private void btnEditPatient_Click(object sender, EventArgs e)
         {
+            if (dgv_Home_Appointment.Rows.Count <= 0) { return; }
             GlobalVariable._Patient_id = dgv_Home_Appointment.CurrentRow.Cells["patidDataGridViewTextBoxColumn"].Value.ToString();
             frm_Patient_Detail form = new frm_Patient_Detail();
             form.ShowDialog();
