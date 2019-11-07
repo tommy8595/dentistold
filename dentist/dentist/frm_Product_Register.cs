@@ -22,6 +22,12 @@ namespace dentist
 
         private void btn_Reg_Pro_Save_Click(object sender, EventArgs e)
         {
+            int pro_id = int.Parse(txt_Pro_Reg_ID.Text);
+            string cate = txt_Pro_Reg_Cat.Text;
+            string pro_name = txt_Pro_Reg_Name.Text;
+            string pro_unit = txt_Pro_Reg_Unit.Text;
+            decimal pro_price = decimal.Parse(txt_Pro_Reg_Price.Text);
+            //StoreProcedure.spd_insert_product(pro_name,pro_price,pro_unit,cate);
             this.Close();
         }
 
