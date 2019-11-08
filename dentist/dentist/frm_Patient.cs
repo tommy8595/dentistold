@@ -98,7 +98,7 @@ namespace dentist
             }
             catch (Exception t)
             {
-                GlobalMethod.HandleException("frm_Patient / btnEditPatient_Click " + t.Message);
+                GlobalMethod.HandleException("frm_Patient / frm_Patient_Activated " + t.Message);
             }
         }
 

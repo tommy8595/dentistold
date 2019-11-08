@@ -26,7 +26,6 @@ namespace dentist
                 {
                     txtId.Text = GlobalVariable._Patient_id;
                     RetrieveData(int.Parse(GlobalVariable._Patient_id));
-                    GlobalVariable._Patient_id = "";
                     GlobalMethod.getGreenRed("md_status", dgvMd, "Inactive");
                 }
                 txtTel.KeyPress += new KeyPressEventHandler(EventHandler.TextBoxNumberOnly);
@@ -66,11 +65,8 @@ namespace dentist
                     row["md_description"].ToString(),
                     row["md_status"].ToString()
                     );
-
             }
-
-
-            
+            GlobalMethod.getGreenRed("md_status", dgvMd, "Inactive");
         }
 
         private void btn_Pat_Det_Edit_Save_Click(object sender, EventArgs e)
@@ -104,8 +100,9 @@ namespace dentist
                     return;
                 }
             }
-            dgvMd.Rows.Add(txtId.Text, cboMd.SelectedValue, GlobalMethod.getCboData(cboMd, "md_name"), txtDes.Text, "active");
-
+            dgvMd.Rows.Add(txtId.Text, cboMd.SelectedValue, GlobalMethod.getCboData(cboMd, "md_name"), txtDes.Text, "Active");
+            if (dgvMd.Rows.Count > 0) { StoreProcedure.spd_insert_patient_md(dgvMd); }
+            GlobalMethod.getGreenRed("md_status", dgvMd, "Inactive");
         }
 
         private void btn_Reg_Pat_Cancel_Click(object sender, EventArgs e)
@@ -116,6 +113,7 @@ namespace dentist
         {   
             try
             {
+                
                 byte[] imgByte = null;
                 if (!GlobalMethod.FormValidate(this) ) { return; }
                 if (!MyMSB.Show("តើអ្នកពិតជាចង់រក្សាទុកមែនទេ?", "1", true)) { return; }
@@ -139,7 +137,6 @@ namespace dentist
                     txtTel.Text,
                     string.Format("{0}:{1}",nudHour.Value.ToString(),nudMinute.Value.ToString())                   
                     );
-                if (dgvMd.Rows.Count > 0) { StoreProcedure.spd_insert_patient_md(dgvMd); }
                 GlobalVariable._Patient_id = txtId.Text;
                 if (MyMSB.Show("ការកែរប្រែបានជោគជ័យ", "1", false)) { btn_Reg_Pat_Cancel.PerformClick(); };
             }
@@ -171,25 +168,47 @@ namespace dentist
 
         private void btnInactive_Click(object sender, EventArgs e)
         {
-            string md_status, pat_id, md_id;
-            pat_id = txtId.Text;
-            md_id = dgvMd.CurrentRow.Cells["md_id"].Value.ToString();
-            if (dgvMd.CurrentRow.Cells["md_status"].Value.ToString() == "Inactive")
-            {
-                dgvMd.CurrentRow.Cells["md_status"].Value = "Active";
-                md_status = "Active";
-            }
-            else
-            {
-                dgvMd.CurrentRow.Cells["md_status"].Value = "Inactive";
-                md_status = "Inactive";
-            }
-            GlobalMethod.getGreenRed("md_status", dgvMd, "Inactive");
-            StoreProcedure.spd_update_mdHistoryByPatID(int.Parse(pat_id), int.Parse(md_id), md_status);
+            string md_name, md_des, md_status;
+            int md_id;
+            md_id = int.Parse(dgvMd.CurrentRow.Cells["md_id"].Value.ToString());
+            md_name = dgvMd.CurrentRow.Cells["md_name"].Value.ToString();
+            md_des = dgvMd.CurrentRow.Cells["md_description"].Value.ToString();
+            md_status = dgvMd.CurrentRow.Cells["md_status"].Value.ToString();            
+            frm_Edit_Patient_Md form = new frm_Edit_Patient_Md(md_name, md_des, md_status, int.Parse(txtId.Text), md_id);
+            form.ShowDialog();
         }
         private void btnShowPic_Click(object sender, EventArgs e)
         {
             this.fun_getPatientImageByIDTableAdapter.Fill(dentist_DS.fun_getPatientImageByID, int.Parse(txtId.Text));
+        }
+
+        private void dgvMd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string md_name = "asd", md_des = "asd", md_status = "asd";
+            int md_id = 1;
+            md_name = dgvMd.CurrentRow.Cells["md_name"].Value.ToString();
+            md_des = dgvMd.CurrentRow.Cells["md_description"].Value.ToString();
+            md_status = dgvMd.CurrentRow.Cells["md_status"].Value.ToString();
+            md_id = (int)dgvMd.CurrentRow.Cells["md_status"].Value;
+            frm_Edit_Patient_Md form = new frm_Edit_Patient_Md(md_name, md_des, md_status, int.Parse(txtId.Text), md_id);
+            form.ShowDialog();
+        }
+
+        private void frm_Patient_Detail_Edit_Activated(object sender, EventArgs e)
+        {
+            dgvMd.Rows.Clear();
+            DataTable dt = this.fun_getActiveMedicalHistoryForSpecificPaientTableAdapter.GetData(int.Parse(txtId.Text));
+            foreach (DataRow row in dt.Rows)
+            {
+                dgvMd.Rows.Add(
+                    row["pat_id"].ToString(),
+                    row["md_id"].ToString(),
+                    row["md_name"].ToString(),
+                    row["md_description"].ToString(),
+                    row["md_status"].ToString()
+                    );
+            }
+            GlobalMethod.getGreenRed("md_status", dgvMd, "Inactive");
         }
     }
 }

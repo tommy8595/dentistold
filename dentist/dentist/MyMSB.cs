@@ -44,12 +44,14 @@ namespace dentist
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            GlobalVariable._isMSB = true;
             result = true;
             newMSB.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            GlobalVariable._isMSB = true;
             result = false;
             newMSB.Dispose();
         }

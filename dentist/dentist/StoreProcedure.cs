@@ -207,11 +207,12 @@ namespace dentist
             con.Close();
 
         }
-        public static void spd_update_mdHistoryByPatID(int pat_id,int md_id,string md_status)
+        public static void spd_update_mdHistoryByPatID(int pat_id,int md_id,string md_status,string md_description)
         {
             //@pat_id int,
             //@md_id int,
             //@md_status nvarchar(10)
+            //@md_description nvarchar(max)
 
             con = new SqlConnection(connectionString);
             con.Open();
@@ -220,6 +221,7 @@ namespace dentist
             cmd.Parameters.AddWithValue("@pat_id", pat_id);
             cmd.Parameters.AddWithValue("@md_id", md_id);
             cmd.Parameters.AddWithValue("@md_status", md_status);
+            cmd.Parameters.AddWithValue("@md_description", md_description);
             cmd.ExecuteNonQuery();
             con.Close();
 

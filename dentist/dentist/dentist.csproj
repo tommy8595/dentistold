@@ -72,6 +72,12 @@
     <Compile Include="frm_Doctor_Register.Designer.cs">
       <DependentUpon>frm_Doctor_Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Edit_Patient_Md.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Edit_Patient_Md.Designer.cs">
+      <DependentUpon>frm_Edit_Patient_Md.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Expense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Doctor_Register.resx">
       <DependentUpon>frm_Doctor_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Edit_Patient_Md.resx">
+      <DependentUpon>frm_Edit_Patient_Md.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Expense.resx">
       <DependentUpon>frm_Expense.cs</DependentUpon>

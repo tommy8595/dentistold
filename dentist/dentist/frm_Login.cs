@@ -35,5 +35,10 @@ namespace dentist
         {
             Application.Run(new frm_Home());
         }
+
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+        
+        }
     }
 }

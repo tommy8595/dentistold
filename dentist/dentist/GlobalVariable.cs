@@ -44,5 +44,14 @@ namespace dentist
         {
             get { return _user_data.Rows[0]["emp_role"].ToString(); }
         }
+
+        public static  bool _isMSB;
+
+        public bool isMSB
+        {
+            get { return _isMSB; }
+            set { _isMSB = value; }
+        }
+
     }
 }
