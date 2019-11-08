@@ -263,6 +263,19 @@ namespace dentist
             }
 
         }
-
+        //product
+        public  static void spd_insert_product( String productname,decimal productprice,String productunit,int cat_id)
+        {
+            con = new SqlConnection(connectionString);
+            con.Open();
+            cmd = new SqlCommand("dbo.spd_insert_product", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@productname", productname);
+            cmd.Parameters.AddWithValue("@productprice", productprice);
+            cmd.Parameters.AddWithValue("@productunit", productunit);
+            cmd.Parameters.AddWithValue("@catid", cat_id);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
