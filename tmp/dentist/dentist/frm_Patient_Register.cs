@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace dentist
 {
@@ -91,7 +93,7 @@ namespace dentist
                 dlg.Title = "Select Patient Image";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    imgLoc = dlg.FileName.ToString();
+                    imgLoc = VaryQualityLevel(dlg.FileName.ToString());
                     pb.ImageLocation = imgLoc;
                 }
 
@@ -100,6 +102,46 @@ namespace dentist
             {
                 GlobalMethod.HandleException("TestForm / btnBrowse_Click : " + t.Message);
             }
+        }
+        private string VaryQualityLevel(string imgLoc)
+        {
+            string GeneratedFilePath = "";
+            // Get a bitmap. The using statement ensures objects  
+            // are automatically disposed from memory after use.  
+            using (Bitmap bmp1 = new Bitmap(imgLoc))
+            {
+                ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
+
+                // Create an Encoder object based on the GUID  
+                // for the Quality parameter category.  
+                System.Drawing.Imaging.Encoder myEncoder =
+                    System.Drawing.Imaging.Encoder.Quality;
+
+                // Create an EncoderParameters object.  
+                // An EncoderParameters object has an array of EncoderParameter  
+                // objects. In this case, there is only one  
+                // EncoderParameter object in the array.  
+                EncoderParameters myEncoderParameters = new EncoderParameters(1);
+
+                EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, 50L);
+                myEncoderParameters.Param[0] = myEncoderParameter;
+                GeneratedFilePath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\LowQualityImage\LowImage.jpg";
+                bmp1.Save(GeneratedFilePath, jpgEncoder, myEncoderParameters);
+                return GeneratedFilePath;
+            }
+        }
+
+        private ImageCodecInfo GetEncoder(ImageFormat jpeg)
+        {
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.FormatID == jpeg.Guid)
+                {
+                    return codec;
+                }
+            }
+            return null;
         }
 
         private void frm_Patient_Register_Load(object sender, EventArgs e)
@@ -133,6 +175,13 @@ namespace dentist
                 }
             }
             dgvMd.Rows.Add(txtId.Text, cboMd.SelectedValue, GlobalMethod.getCboData(cboMd, "md_name"), txtDes.Text, "Active");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Image flipImage = pb.Image;
+            flipImage.RotateFlip(RotateFlipType.Rotate90FlipXY);
+            pb.Image = flipImage;
         }
     }
 }

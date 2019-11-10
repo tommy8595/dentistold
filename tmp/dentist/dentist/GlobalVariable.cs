@@ -9,6 +9,13 @@ namespace dentist
 {
     class GlobalVariable
     {
+        private static string LowImageFilePath = "";
+
+        public static string _LowImageFilePath
+        {
+            get { return LowImageFilePath; }
+            set { LowImageFilePath = value; }
+        }
         private static string Patient_id = "";
 
         public static string _Patient_id

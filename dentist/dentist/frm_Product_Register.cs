@@ -17,9 +17,6 @@ namespace dentist
         {
             InitializeComponent();
         }
-
-
-
         private void btn_Reg_Pro_Save_Click(object sender, EventArgs e)
         {
             int pro_id = int.Parse(txt_Pro_Reg_ID.Text);

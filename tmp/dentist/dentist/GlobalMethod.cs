@@ -22,6 +22,14 @@ namespace dentist
             img = binaryreader.ReadBytes((int)filestream.Length);
             return img;
         }
+        public static string GetLowImageFilePath(string configID)
+        {
+            SqlConnection con = new SqlConnection(StoreProcedure.connectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT dbo.fun_getConfigByID(@config_id)", con);
+            cmd.Parameters.Add(new SqlParameter("@config_id", configID));
+            return (string)cmd.ExecuteScalar();
+        }
         public static bool FormValidate(Form f)
         {
             foreach (Control item in f.Controls)
