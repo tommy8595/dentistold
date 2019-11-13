@@ -18,7 +18,7 @@ namespace dentist
         private static SqlConnection con;
 
 
-        public static void spd_insert_patient(string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image,string pat_app_date,string pat_nation,string pat_tel, string pat_app_time)
+        public static void spd_insert_patient(string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel, string pat_app_time)
         {
             //    @pat_kh_fname NVARCHAR(MAX),
             //    @pat_kh_lname NVARCHAR(MAX),
@@ -86,7 +86,7 @@ namespace dentist
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
             }
         }
-        public static void sp_login(string username,string password)
+        public static void sp_login(string username, string password)
         {
             using (con = new SqlConnection(connectionString))
             {
@@ -101,7 +101,7 @@ namespace dentist
                 GlobalVariable._user_data = ds;
             }
         }
-        public static void fn_login_admin(string username,string password)
+        public static void fn_login_admin(string username, string password)
         {
             try
             {
@@ -110,11 +110,11 @@ namespace dentist
                 cmd = new SqlCommand("select [dbo].[fn_login_admin](@u,@p);", con);
                 cmd.Parameters.AddWithValue("@u", username);
                 cmd.Parameters.AddWithValue("@p", password);
-                
+
                 GlobalVariable._role = int.Parse(cmd.ExecuteScalar().ToString());
                 con.Close();
             }
-            catch(Exception t)
+            catch (Exception t)
             {
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
             }
@@ -169,7 +169,7 @@ namespace dentist
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_tp : " + t.Message);
             }
         }
-        public static void spd_update_patientByID(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel,string pat_app_time)
+        public static void spd_update_patientByID(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel, string pat_app_time)
         {
             //@pat_id int,
             //@pat_kh_fname NVARCHAR(MAX),
@@ -207,7 +207,7 @@ namespace dentist
             con.Close();
 
         }
-        public static void spd_update_mdHistoryByPatID(int pat_id,int md_id,string md_status,string md_description)
+        public static void spd_update_mdHistoryByPatID(int pat_id, int md_id, string md_status, string md_description)
         {
             //@pat_id int,
             //@md_id int,
@@ -226,7 +226,7 @@ namespace dentist
             con.Close();
 
         }
-        public static void spd_insert_patDoc (int pat_id, string patDoc_code, int pat_id_length)
+        public static void spd_insert_patDoc(int pat_id, string patDoc_code, int pat_id_length)
         {
             //@patDoc_code nvarchar(max),
             //@pat_id int
@@ -256,15 +256,15 @@ namespace dentist
                 con.Close();
                 return val;
             }
-            catch (Exception t )
-            {           
+            catch (Exception t)
+            {
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_tp : " + t.Message);
                 throw;
             }
 
         }
         //product
-        public  static void spd_insert_product( String productname,decimal productprice,String productunit,int cat_id)
+        public static void spd_insert_product(string productname, decimal productprice, string productunit, int cat_id)
         {
             con = new SqlConnection(connectionString);
             con.Open();
@@ -272,10 +272,12 @@ namespace dentist
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@productname", productname);
             cmd.Parameters.AddWithValue("@productprice", productprice);
-            cmd.Parameters.AddWithValue("@productunit", productunit);
+            cmd.Parameters.AddWithValue("@prounit", productunit);
             cmd.Parameters.AddWithValue("@catid", cat_id);
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
     }
+    
 }

@@ -135,3 +135,5 @@ C:\Users\Gabriel\Documents\dentistold\dentist\dentist\obj\Debug\dentist.exe
 C:\Users\Gabriel\Documents\dentistold\dentist\dentist\obj\Debug\dentist.pdb
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csprojResolveAssemblyReference.cache
+D:\dentist\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources
+D:\dentist\dentist\dentist\obj\Debug\dentist.csproj.CoreCompileInputs.cache
