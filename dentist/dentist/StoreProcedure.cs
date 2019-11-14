@@ -277,6 +277,17 @@ namespace dentist
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        public static void insert_stock(string so,DateTime impdate)
+        {
+            con = new SqlConnection(connectionString);
+            con.Open();
+            cmd = new SqlCommand("dbo.insert_stock", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@so", so);
+            cmd.Parameters.AddWithValue("@imp_date", impdate);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
 
     }
     
