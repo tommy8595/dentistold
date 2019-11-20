@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DentistDataSet1" targetNamespace="http://tempuri.org/DentistDataSet1.xsd" xmlns:mstns="http://tempuri.org/DentistDataSet1.xsd" xmlns="http://tempuri.org/DentistDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DentistConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DentistConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.dentist.Properties.Settings.GlobalReference.Default.DentistConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fun_getProductListExpireTableAdapter" GeneratorDataComponentClassName="fun_getProductListExpireTableAdapter" Name="fun_getProductListExpire" UserDataComponentName="fun_getProductListExpireTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DentistConnectionString (Settings)" DbObjectName="Dentist.dbo.fun_getProductListExpire" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Product name], Category, quanity, [Product in unit], ExpireDate, Warehouse FROM dbo.fun_getProductListExpire()</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Product name" DataSetColumn="Product name" />
+              <Mapping SourceColumn="Category" DataSetColumn="Category" />
+              <Mapping SourceColumn="quanity" DataSetColumn="quanity" />
+              <Mapping SourceColumn="Product in unit" DataSetColumn="Product in unit" />
+              <Mapping SourceColumn="ExpireDate" DataSetColumn="ExpireDate" />
+              <Mapping SourceColumn="Warehouse" DataSetColumn="Warehouse" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DentistDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DentistDataSet1" msprop:Generator_UserDSName="DentistDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="fun_getProductListExpire" msprop:Generator_TableClassName="fun_getProductListExpireDataTable" msprop:Generator_TableVarName="tablefun_getProductListExpire" msprop:Generator_TablePropName="fun_getProductListExpire" msprop:Generator_RowDeletingName="fun_getProductListExpireRowDeleting" msprop:Generator_RowChangingName="fun_getProductListExpireRowChanging" msprop:Generator_RowEvHandlerName="fun_getProductListExpireRowChangeEventHandler" msprop:Generator_RowDeletedName="fun_getProductListExpireRowDeleted" msprop:Generator_UserTableName="fun_getProductListExpire" msprop:Generator_RowChangedName="fun_getProductListExpireRowChanged" msprop:Generator_RowEvArgName="fun_getProductListExpireRowChangeEvent" msprop:Generator_RowClassName="fun_getProductListExpireRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Product_x0020_name" msprop:Generator_ColumnVarNameInTable="columnProduct_name" msprop:Generator_ColumnPropNameInRow="Product_name" msprop:Generator_ColumnPropNameInTable="Product_nameColumn" msprop:Generator_UserColumnName="Product name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quanity" msprop:Generator_ColumnVarNameInTable="columnquanity" msprop:Generator_ColumnPropNameInRow="quanity" msprop:Generator_ColumnPropNameInTable="quanityColumn" msprop:Generator_UserColumnName="quanity" type="xs:int" minOccurs="0" />
+              <xs:element name="Product_x0020_in_x0020_unit" msprop:Generator_ColumnVarNameInTable="columnProduct_in_unit" msprop:Generator_ColumnPropNameInRow="Product_in_unit" msprop:Generator_ColumnPropNameInTable="Product_in_unitColumn" msprop:Generator_UserColumnName="Product in unit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExpireDate" msprop:Generator_ColumnVarNameInTable="columnExpireDate" msprop:Generator_ColumnPropNameInRow="ExpireDate" msprop:Generator_ColumnPropNameInTable="ExpireDateColumn" msprop:Generator_UserColumnName="ExpireDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Warehouse" msprop:Generator_ColumnVarNameInTable="columnWarehouse" msprop:Generator_ColumnPropNameInRow="Warehouse" msprop:Generator_ColumnPropNameInTable="WarehouseColumn" msprop:Generator_UserColumnName="Warehouse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

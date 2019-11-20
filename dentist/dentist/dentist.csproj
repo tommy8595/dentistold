@@ -48,6 +48,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DentistDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DentistDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DentistDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DentistDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DentistDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DentistDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dentist_DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,6 +245,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DentistDataSet.xsc">
+      <DependentUpon>DentistDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DentistDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DentistDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DentistDataSet.xss">
+      <DependentUpon>DentistDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DentistDataSet1.xsc">
+      <DependentUpon>DentistDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DentistDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DentistDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DentistDataSet1.xss">
+      <DependentUpon>DentistDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DentistDataSet2.xsc">
+      <DependentUpon>DentistDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DentistDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DentistDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DentistDataSet2.xss">
+      <DependentUpon>DentistDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Dentist_DS.xsc">
       <DependentUpon>Dentist_DS.xsd</DependentUpon>
     </None>
