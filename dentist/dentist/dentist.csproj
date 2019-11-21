@@ -48,6 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DentistDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DentistDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dentist_DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,6 +235,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DentistDataSet.xsc">
+      <DependentUpon>DentistDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DentistDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DentistDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DentistDataSet.xss">
+      <DependentUpon>DentistDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Dentist_DS.xsc">
       <DependentUpon>Dentist_DS.xsd</DependentUpon>
     </None>

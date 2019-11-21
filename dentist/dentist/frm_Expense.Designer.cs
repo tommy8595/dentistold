@@ -53,16 +53,18 @@
             this.panel4.Controls.Add(this.pictureBox9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1582, 108);
+            this.panel4.Size = new System.Drawing.Size(2373, 169);
             this.panel4.TabIndex = 4;
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox9.Location = new System.Drawing.Point(4, 8);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox9.Size = new System.Drawing.Size(150, 156);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
@@ -73,13 +75,14 @@
             this.btn_Expense_Back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Expense_Back.FlatAppearance.BorderSize = 0;
             this.btn_Expense_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Expense_Back.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Expense_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Expense_Back.ForeColor = System.Drawing.Color.White;
             this.btn_Expense_Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_Expense_Back.Image")));
             this.btn_Expense_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Expense_Back.Location = new System.Drawing.Point(38, 778);
+            this.btn_Expense_Back.Location = new System.Drawing.Point(57, 1216);
+            this.btn_Expense_Back.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Expense_Back.Name = "btn_Expense_Back";
-            this.btn_Expense_Back.Size = new System.Drawing.Size(184, 50);
+            this.btn_Expense_Back.Size = new System.Drawing.Size(276, 78);
             this.btn_Expense_Back.TabIndex = 96;
             this.btn_Expense_Back.Text = "ត្រឡប់ក្រោយ";
             this.btn_Expense_Back.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -91,11 +94,12 @@
             this.dgv_Expense.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Expense.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Expense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Expense.Location = new System.Drawing.Point(38, 354);
+            this.dgv_Expense.Location = new System.Drawing.Point(57, 553);
+            this.dgv_Expense.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_Expense.Name = "dgv_Expense";
             this.dgv_Expense.RowHeadersWidth = 51;
             this.dgv_Expense.RowTemplate.Height = 24;
-            this.dgv_Expense.Size = new System.Drawing.Size(1462, 408);
+            this.dgv_Expense.Size = new System.Drawing.Size(2193, 638);
             this.dgv_Expense.TabIndex = 95;
             // 
             // btn_Expense_Add
@@ -104,31 +108,35 @@
             this.btn_Expense_Add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Expense_Add.FlatAppearance.BorderSize = 0;
             this.btn_Expense_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Expense_Add.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Expense_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Expense_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Expense_Add.Location = new System.Drawing.Point(38, 127);
+            this.btn_Expense_Add.Location = new System.Drawing.Point(57, 198);
+            this.btn_Expense_Add.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Expense_Add.Name = "btn_Expense_Add";
-            this.btn_Expense_Add.Size = new System.Drawing.Size(1462, 40);
+            this.btn_Expense_Add.Size = new System.Drawing.Size(2193, 62);
             this.btn_Expense_Add.TabIndex = 94;
             this.btn_Expense_Add.Text = "បង្កើតថ្មី";
             this.btn_Expense_Add.UseVisualStyleBackColor = false;
+            this.btn_Expense_Add.Click += new System.EventHandler(this.btn_Expense_Add_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 292);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 456);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 36);
+            this.label1.Size = new System.Drawing.Size(189, 37);
             this.label1.TabIndex = 190;
             this.label1.Text = "ប្រាក់ចំណូលសរុប";
             // 
             // txt_Expense_Total
             // 
-            this.txt_Expense_Total.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Expense_Total.Location = new System.Drawing.Point(224, 292);
+            this.txt_Expense_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Expense_Total.Location = new System.Drawing.Point(336, 456);
+            this.txt_Expense_Total.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Expense_Total.Name = "txt_Expense_Total";
-            this.txt_Expense_Total.Size = new System.Drawing.Size(1276, 34);
+            this.txt_Expense_Total.Size = new System.Drawing.Size(1912, 44);
             this.txt_Expense_Total.TabIndex = 189;
             // 
             // btn_Expense_Week
@@ -137,14 +145,16 @@
             this.btn_Expense_Week.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Expense_Week.FlatAppearance.BorderSize = 0;
             this.btn_Expense_Week.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Expense_Week.Font = new System.Drawing.Font("Khmer OS Battambang", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Expense_Week.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Expense_Week.ForeColor = System.Drawing.Color.White;
-            this.btn_Expense_Week.Location = new System.Drawing.Point(773, 217);
+            this.btn_Expense_Week.Location = new System.Drawing.Point(1160, 339);
+            this.btn_Expense_Week.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Expense_Week.Name = "btn_Expense_Week";
-            this.btn_Expense_Week.Size = new System.Drawing.Size(360, 50);
+            this.btn_Expense_Week.Size = new System.Drawing.Size(540, 78);
             this.btn_Expense_Week.TabIndex = 188;
             this.btn_Expense_Week.Text = "ខែនេះ";
             this.btn_Expense_Week.UseVisualStyleBackColor = false;
+            this.btn_Expense_Week.Click += new System.EventHandler(this.btn_Expense_Week_Click);
             // 
             // btn_Expense_Year
             // 
@@ -152,14 +162,16 @@
             this.btn_Expense_Year.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Expense_Year.FlatAppearance.BorderSize = 0;
             this.btn_Expense_Year.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Expense_Year.Font = new System.Drawing.Font("Khmer OS Battambang", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Expense_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Expense_Year.ForeColor = System.Drawing.Color.White;
-            this.btn_Expense_Year.Location = new System.Drawing.Point(1140, 217);
+            this.btn_Expense_Year.Location = new System.Drawing.Point(1710, 339);
+            this.btn_Expense_Year.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Expense_Year.Name = "btn_Expense_Year";
-            this.btn_Expense_Year.Size = new System.Drawing.Size(360, 50);
+            this.btn_Expense_Year.Size = new System.Drawing.Size(540, 78);
             this.btn_Expense_Year.TabIndex = 187;
             this.btn_Expense_Year.Text = "ឆ្នាំនេះ";
             this.btn_Expense_Year.UseVisualStyleBackColor = false;
+            this.btn_Expense_Year.Click += new System.EventHandler(this.btn_Expense_Year_Click);
             // 
             // btn_Expense_Today
             // 
@@ -167,21 +179,24 @@
             this.btn_Expense_Today.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Expense_Today.FlatAppearance.BorderSize = 0;
             this.btn_Expense_Today.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Expense_Today.Font = new System.Drawing.Font("Khmer OS Battambang", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Expense_Today.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Expense_Today.ForeColor = System.Drawing.Color.White;
-            this.btn_Expense_Today.Location = new System.Drawing.Point(406, 217);
+            this.btn_Expense_Today.Location = new System.Drawing.Point(609, 339);
+            this.btn_Expense_Today.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Expense_Today.Name = "btn_Expense_Today";
-            this.btn_Expense_Today.Size = new System.Drawing.Size(360, 50);
+            this.btn_Expense_Today.Size = new System.Drawing.Size(540, 78);
             this.btn_Expense_Today.TabIndex = 186;
             this.btn_Expense_Today.Text = "ថ្ងៃនេះ";
             this.btn_Expense_Today.UseVisualStyleBackColor = false;
+            this.btn_Expense_Today.Click += new System.EventHandler(this.btn_Expense_Today_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBox2.Location = new System.Drawing.Point(38, 192);
+            this.pictureBox2.Location = new System.Drawing.Point(57, 300);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1462, 1);
+            this.pictureBox2.Size = new System.Drawing.Size(2193, 2);
             this.pictureBox2.TabIndex = 191;
             this.pictureBox2.TabStop = false;
             // 
@@ -191,20 +206,22 @@
             this.btn_Expense_All.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Expense_All.FlatAppearance.BorderSize = 0;
             this.btn_Expense_All.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Expense_All.Font = new System.Drawing.Font("Khmer OS Battambang", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Expense_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Expense_All.ForeColor = System.Drawing.Color.White;
-            this.btn_Expense_All.Location = new System.Drawing.Point(39, 217);
+            this.btn_Expense_All.Location = new System.Drawing.Point(58, 339);
+            this.btn_Expense_All.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Expense_All.Name = "btn_Expense_All";
-            this.btn_Expense_All.Size = new System.Drawing.Size(360, 50);
+            this.btn_Expense_All.Size = new System.Drawing.Size(540, 78);
             this.btn_Expense_All.TabIndex = 192;
             this.btn_Expense_All.Text = "គ្រប់ពេល";
             this.btn_Expense_All.UseVisualStyleBackColor = false;
+            this.btn_Expense_All.Click += new System.EventHandler(this.btn_Expense_All_Click);
             // 
             // frm_Expense
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 853);
+            this.ClientSize = new System.Drawing.Size(2373, 1333);
             this.Controls.Add(this.btn_Expense_All);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
@@ -218,6 +235,7 @@
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frm_Expense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

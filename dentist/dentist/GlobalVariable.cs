@@ -30,19 +30,42 @@ namespace dentist
         }
         public static int _user_id
         {
-            get { return int.Parse(_user_data.Rows[0]["emp_id"].ToString()); }
+            get
+            {
+                if(_user_data.Rows.Count>0)
+                    return int.Parse(_user_data.Rows[0]["emp_id"].ToString());
+                return 0 ;
+            }
         }
         public static string _user_name
         {
-            get { return _user_data.Rows[0]["emp_name"].ToString(); }
+            get
+            {
+                if (_user_data.Rows.Count > 0)
+                    return _user_data.Rows[0]["emp_name"].ToString();
+                return "";
+            }
+
+
         }
         public static string _user_user_name
         {
-            get { return _user_data.Rows[0]["emp_username"].ToString(); }
+            get
+            {
+                if (_user_data.Rows.Count > 0)
+                    return _user_data.Rows[0]["emp_username"].ToString();
+                return "";
+            }
         }
         public static string _user_role
         {
-            get { return _user_data.Rows[0]["emp_role"].ToString(); }
+            
+            get
+            {
+                if (_user_data.Rows.Count > 0)
+                    return _user_data.Rows[0]["emp_role"].ToString();
+                return "";
+            }
         }
 
         public static  bool _isMSB;
