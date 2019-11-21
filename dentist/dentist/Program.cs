@@ -16,7 +16,7 @@ namespace dentist
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Expense());
+            Application.Run(new frm_Login());
         }
     }
 }

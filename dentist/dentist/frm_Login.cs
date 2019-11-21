@@ -19,28 +19,17 @@ namespace dentist
         }
 
         Thread th;
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             string username = txt_username.Text;
             string password = txt_password.Text;
             StoreProcedure.sp_login(username, password);
             StoreProcedure.fn_login_admin(username, password);
-            if (GlobalVariable._user_role == "")
-            {
-                this.Refresh();
-                lbl_denied_info.Text = "Please Enter the correct info.";
-            }
-            else
-            {
-                this.Close();
-                th = new Thread(openHome);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
-            }
-        }
-        private void openLogin()
-        {
-            Application.Run(new frm_Login());
+            this.Close();
+            th = new Thread(openHome);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
         private void openHome()
         {

@@ -22,10 +22,6 @@ namespace dentist
 
         private void btn_Expense_Save_Click(object sender, EventArgs e)
         {
-            string exp_name = txt_Expense_Name.Text;
-            float exp_price = float.Parse(txt_Expense_Price.Text);
-            string exp_detail = txt_Expense_Detail.Text;
-            StoreProcedure.sp_insert_expense(exp_detail, exp_name, exp_price);
             this.Close();
             Thread th = new Thread(openExpense);
             th.SetApartmentState(ApartmentState.STA);
