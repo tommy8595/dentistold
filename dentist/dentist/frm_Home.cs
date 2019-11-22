@@ -14,8 +14,7 @@ namespace dentist
     public partial class frm_Home : Form
     {
         public frm_Home()
-        {
-            
+        {     
             InitializeComponent();
         }
 
@@ -122,7 +121,9 @@ namespace dentist
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
-            if(GlobalVariable._user_role=="admin")
+            // TODO: This line of code loads data into the 'dentist_DS.fun_getRecentPayment' table. You can move, or remove it, as needed.
+            this.fun_getRecentPaymentTableAdapter.Fill(this.dentist_DS.fun_getRecentPayment);
+            if (GlobalVariable._user_role=="admin")
             {
 
             }
@@ -157,11 +158,44 @@ namespace dentist
         private void frm_Home_Activated(object sender, EventArgs e)
         {
             this.fun_getPatientCurrentAppDateTableAdapter.Fill(this.dentist_DS.fun_getPatientCurrentAppDate);
+            this.fun_getRecentPaymentTableAdapter.Fill(this.dentist_DS.fun_getRecentPayment);
         }
 
         private void pn_Home_Paint(object sender, PaintEventArgs e)
         {
             label1.Text = GlobalVariable._user_data.Rows[0]["emp_id"].ToString();
+        }
+
+        private void btnOwed_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread th = new Thread(openOwedList);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void openOwedList()
+        {
+            Application.Run(new frm_owed_lists());
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalVariable._Patient_id = dataGridView1.CurrentRow.Cells["patidDataGridViewTextBoxColumn1"].Value.ToString();
+                frm_Payment form = new frm_Payment(dataGridView1.CurrentRow.Cells["fullKhNameDataGridViewTextBoxColumn"].Value.ToString());
+                form.ShowDialog();
+            }
+            catch (Exception t)
+            {
+                GlobalMethod.HandleException("frm_Home / btnPayment_Click " + t.Message);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            this.fun_getRecentPaymentTableAdapter.Fill(this.dentist_DS.fun_getRecentPayment);
         }
     }
 }

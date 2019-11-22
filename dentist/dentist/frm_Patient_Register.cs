@@ -18,7 +18,7 @@ namespace dentist
             InitializeComponent();
         }
         string imgLoc = "";
-
+        int Image_order=0;
         private void btn_Reg_Pat_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,25 +32,21 @@ namespace dentist
             Application.Run(new frm_Patient());
         }
 
-        private bool IsPassValidated()
+        private void btn_Reg_Pat_Save_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(imgLoc))
+            byte[] imgBinary;
+            if (!GlobalMethod.FormValidate(this)) { return; }
+            if (!MyMSB.Show("តើអ្នកពិតជាចង់រក្សាទុកមែនទេ?", "1", true)){ return; }
+
+            if (!string.IsNullOrEmpty(imgLoc))
             {
-                return true;
+                imgBinary = GlobalMethod.GetImageByte(imgLoc);
             }
             else
             {
-                return false;
+                imgBinary = GlobalMethod.GetImageByte(GlobalVariable._DefaultImgPath);
             }
-        }
-
-        private void btn_Reg_Pat_Save_Click(object sender, EventArgs e)
-        {
-            if (!GlobalMethod.FormValidate(this) || IsPassValidated()) { return; }
-            if (!MyMSB.Show("តើអ្នកពិតជាចង់រក្សាទុកមែនទេ?", "1", true)){ return; }
             
-
-            byte[] imgBinary = GlobalMethod.GetImageByte(imgLoc);
             StoreProcedure.spd_insert_patient(
                 txtKhFname.Text,
                 txtKhLname.Text,
@@ -64,7 +60,8 @@ namespace dentist
                 dtpAppoint.Value.ToString("yyyy-MM-dd"),
                 txtNati.Text,
                 txtTel.Text,
-                string.Format("{0}:{1}",nudHour.Value.ToString(),nudMinute.Value.ToString())
+                string.Format("{0}:{1}",nudHour.Value.ToString(),nudMinute.Value.ToString()),
+                Image_order
                 );
             if (dgvMd.Rows.Count > 0) { StoreProcedure.spd_insert_patient_md(dgvMd); }
             GlobalVariable._Patient_id = txtId.Text;
@@ -91,7 +88,7 @@ namespace dentist
                 dlg.Title = "Select Patient Image";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    imgLoc = dlg.FileName.ToString();
+                    imgLoc=GlobalMethod.VaryQualityLevel(dlg.FileName.ToString());                  
                     pb.ImageLocation = imgLoc;
                 }
 
@@ -133,6 +130,14 @@ namespace dentist
                 }
             }
             dgvMd.Rows.Add(txtId.Text, cboMd.SelectedValue, GlobalMethod.getCboData(cboMd, "md_name"), txtDes.Text, "Active");
+        }
+
+        private void btnRotate_Click(object sender, EventArgs e)
+        {
+            Image flipImage = pb.Image;
+            flipImage.RotateFlip(RotateFlipType.Rotate90FlipXY);
+            pb.Image = flipImage;
+            Image_order++;
         }
     }
 }

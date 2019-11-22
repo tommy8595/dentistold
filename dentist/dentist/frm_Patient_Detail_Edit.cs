@@ -18,6 +18,8 @@ namespace dentist
             InitializeComponent();
         }
         string imgLoc = null;
+        int Image_order = 0;
+
         private void frm_Patient_Detail_Edit_Load(object sender, EventArgs e)
         {
             try
@@ -135,7 +137,8 @@ namespace dentist
                     dtpAppoint.Value.ToString("yyyy-MM-dd"),
                     txtNati.Text,
                     txtTel.Text,
-                    string.Format("{0}:{1}",nudHour.Value.ToString(),nudMinute.Value.ToString())                   
+                    string.Format("{0}:{1}",nudHour.Value.ToString(),nudMinute.Value.ToString()),
+                    Image_order                   
                     );
                 GlobalVariable._Patient_id = txtId.Text;
                 if (MyMSB.Show("ការកែរប្រែបានជោគជ័យ", "1", false)) { btn_Reg_Pat_Cancel.PerformClick(); };
@@ -155,7 +158,7 @@ namespace dentist
                 dlg.Title = "Select Patient Image";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    imgLoc = dlg.FileName.ToString();
+                    imgLoc = GlobalMethod.VaryQualityLevel(dlg.FileName.ToString());
                     pb.ImageLocation = imgLoc;
                 }
 
@@ -180,6 +183,7 @@ namespace dentist
         private void btnShowPic_Click(object sender, EventArgs e)
         {
             this.fun_getPatientImageByIDTableAdapter.Fill(dentist_DS.fun_getPatientImageByID, int.Parse(txtId.Text));
+            btnShowPic.Enabled = false;
         }
 
         private void dgvMd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -209,6 +213,14 @@ namespace dentist
                     );
             }
             GlobalMethod.getGreenRed("md_status", dgvMd, "Inactive");
+        }
+
+        private void btnRotate_Click(object sender, EventArgs e)
+        {
+            Image flipImage = pb.Image;
+            flipImage.RotateFlip(RotateFlipType.Rotate90FlipXY);
+            pb.Image = flipImage;
+            Image_order++;
         }
     }
 }

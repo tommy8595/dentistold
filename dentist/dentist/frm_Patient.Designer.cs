@@ -40,13 +40,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fun_getAllPatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dentist_DS = new dentist.Dentist_DS();
-            this.btn_Patient_Back = new System.Windows.Forms.Button();
-            this.fun_getAllPatientTableAdapter = new dentist.Dentist_DSTableAdapters.fun_getAllPatientTableAdapter();
-            this.tableAdapterManager = new dentist.Dentist_DSTableAdapters.TableAdapterManager();
-            this.btnEditPatient = new System.Windows.Forms.Button();
-            this.btnPatientDetail = new System.Windows.Forms.Button();
             this.patidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullKhName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +48,14 @@
             this.patbirthyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patjobDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pataddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fun_getAllPatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dentist_DS = new dentist.Dentist_DS();
+            this.btn_Patient_Back = new System.Windows.Forms.Button();
+            this.fun_getAllPatientTableAdapter = new dentist.Dentist_DSTableAdapters.fun_getAllPatientTableAdapter();
+            this.tableAdapterManager = new dentist.Dentist_DSTableAdapters.TableAdapterManager();
+            this.btnEditPatient = new System.Windows.Forms.Button();
+            this.btnPatientDetail = new System.Windows.Forms.Button();
+            this.btnPayment = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,7 +72,7 @@
             this.btn_Patient_Register.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Patient_Register.ForeColor = System.Drawing.Color.White;
             this.btn_Patient_Register.Location = new System.Drawing.Point(28, 103);
-            this.btn_Patient_Register.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Patient_Register.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Patient_Register.Name = "btn_Patient_Register";
             this.btn_Patient_Register.Size = new System.Drawing.Size(1147, 32);
             this.btn_Patient_Register.TabIndex = 2;
@@ -88,7 +89,7 @@
             this.panel4.Controls.Add(this.pictureBox9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1186, 88);
             this.panel4.TabIndex = 1;
@@ -118,7 +119,7 @@
             this.btn_Patient_Search.Font = new System.Drawing.Font("Khmer OS Battambang", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Patient_Search.ForeColor = System.Drawing.Color.White;
             this.btn_Patient_Search.Location = new System.Drawing.Point(1023, 29);
-            this.btn_Patient_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Patient_Search.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Patient_Search.Name = "btn_Patient_Search";
             this.btn_Patient_Search.Size = new System.Drawing.Size(101, 28);
             this.btn_Patient_Search.TabIndex = 4;
@@ -131,7 +132,7 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Khmer OS Battambang", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(717, 25);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(299, 36);
             this.txtSearch.TabIndex = 1;
@@ -140,7 +141,7 @@
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(2, 4);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(75, 81);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,7 +186,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(28, 197);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -194,80 +195,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1147, 422);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // fun_getAllPatientBindingSource
-            // 
-            this.fun_getAllPatientBindingSource.DataMember = "fun_getAllPatient";
-            this.fun_getAllPatientBindingSource.DataSource = this.dentist_DS;
-            // 
-            // dentist_DS
-            // 
-            this.dentist_DS.DataSetName = "Dentist_DS";
-            this.dentist_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btn_Patient_Back
-            // 
-            this.btn_Patient_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.btn_Patient_Back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Patient_Back.FlatAppearance.BorderSize = 0;
-            this.btn_Patient_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Patient_Back.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Patient_Back.ForeColor = System.Drawing.Color.White;
-            this.btn_Patient_Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_Patient_Back.Image")));
-            this.btn_Patient_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Patient_Back.Location = new System.Drawing.Point(28, 632);
-            this.btn_Patient_Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_Patient_Back.Name = "btn_Patient_Back";
-            this.btn_Patient_Back.Size = new System.Drawing.Size(138, 41);
-            this.btn_Patient_Back.TabIndex = 12;
-            this.btn_Patient_Back.Text = "ត្រឡប់ក្រោយ";
-            this.btn_Patient_Back.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Patient_Back.UseVisualStyleBackColor = false;
-            this.btn_Patient_Back.Click += new System.EventHandler(this.btn_Patient_Back_Click);
-            // 
-            // fun_getAllPatientTableAdapter
-            // 
-            this.fun_getAllPatientTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.UpdateOrder = dentist.Dentist_DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // btnEditPatient
-            // 
-            this.btnEditPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(79)))));
-            this.btnEditPatient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditPatient.FlatAppearance.BorderSize = 0;
-            this.btnEditPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditPatient.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPatient.ForeColor = System.Drawing.Color.White;
-            this.btnEditPatient.Location = new System.Drawing.Point(28, 147);
-            this.btnEditPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnEditPatient.Name = "btnEditPatient";
-            this.btnEditPatient.Size = new System.Drawing.Size(552, 32);
-            this.btnEditPatient.TabIndex = 87;
-            this.btnEditPatient.Text = "កែប្រែពត៌មានអ្នកជំងឺ";
-            this.btnEditPatient.UseVisualStyleBackColor = false;
-            this.btnEditPatient.Click += new System.EventHandler(this.btnEditPatient_Click);
-            // 
-            // btnPatientDetail
-            // 
-            this.btnPatientDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(178)))), ((int)(((byte)(73)))));
-            this.btnPatientDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPatientDetail.FlatAppearance.BorderSize = 0;
-            this.btnPatientDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPatientDetail.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientDetail.ForeColor = System.Drawing.Color.White;
-            this.btnPatientDetail.Location = new System.Drawing.Point(584, 147);
-            this.btnPatientDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnPatientDetail.Name = "btnPatientDetail";
-            this.btnPatientDetail.Size = new System.Drawing.Size(591, 32);
-            this.btnPatientDetail.TabIndex = 88;
-            this.btnPatientDetail.Text = "ពិនិត្យពត៌មានលំអិត និងបញ្ជូនអ្នកជំងឺចូលបន្ទប់ព្យាបាល";
-            this.btnPatientDetail.UseVisualStyleBackColor = false;
-            this.btnPatientDetail.Click += new System.EventHandler(this.btnPatientDetail_Click);
             // 
             // patidDataGridViewTextBoxColumn
             // 
@@ -328,11 +255,103 @@
             this.pataddressDataGridViewTextBoxColumn.Name = "pataddressDataGridViewTextBoxColumn";
             this.pataddressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // fun_getAllPatientBindingSource
+            // 
+            this.fun_getAllPatientBindingSource.DataMember = "fun_getAllPatient";
+            this.fun_getAllPatientBindingSource.DataSource = this.dentist_DS;
+            // 
+            // dentist_DS
+            // 
+            this.dentist_DS.DataSetName = "Dentist_DS";
+            this.dentist_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btn_Patient_Back
+            // 
+            this.btn_Patient_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.btn_Patient_Back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Patient_Back.FlatAppearance.BorderSize = 0;
+            this.btn_Patient_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Patient_Back.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Patient_Back.ForeColor = System.Drawing.Color.White;
+            this.btn_Patient_Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_Patient_Back.Image")));
+            this.btn_Patient_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Patient_Back.Location = new System.Drawing.Point(28, 632);
+            this.btn_Patient_Back.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Patient_Back.Name = "btn_Patient_Back";
+            this.btn_Patient_Back.Size = new System.Drawing.Size(138, 41);
+            this.btn_Patient_Back.TabIndex = 12;
+            this.btn_Patient_Back.Text = "ត្រឡប់ក្រោយ";
+            this.btn_Patient_Back.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Patient_Back.UseVisualStyleBackColor = false;
+            this.btn_Patient_Back.Click += new System.EventHandler(this.btn_Patient_Back_Click);
+            // 
+            // fun_getAllPatientTableAdapter
+            // 
+            this.fun_getAllPatientTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.UpdateOrder = dentist.Dentist_DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // btnEditPatient
+            // 
+            this.btnEditPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(79)))));
+            this.btnEditPatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditPatient.FlatAppearance.BorderSize = 0;
+            this.btnEditPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditPatient.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPatient.ForeColor = System.Drawing.Color.White;
+            this.btnEditPatient.Location = new System.Drawing.Point(28, 147);
+            this.btnEditPatient.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditPatient.Name = "btnEditPatient";
+            this.btnEditPatient.Size = new System.Drawing.Size(376, 32);
+            this.btnEditPatient.TabIndex = 87;
+            this.btnEditPatient.Text = "កែប្រែពត៌មានអ្នកជំងឺ";
+            this.btnEditPatient.UseVisualStyleBackColor = false;
+            this.btnEditPatient.Click += new System.EventHandler(this.btnEditPatient_Click);
+            // 
+            // btnPatientDetail
+            // 
+            this.btnPatientDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(178)))), ((int)(((byte)(73)))));
+            this.btnPatientDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPatientDetail.FlatAppearance.BorderSize = 0;
+            this.btnPatientDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPatientDetail.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPatientDetail.ForeColor = System.Drawing.Color.White;
+            this.btnPatientDetail.Location = new System.Drawing.Point(770, 147);
+            this.btnPatientDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPatientDetail.Name = "btnPatientDetail";
+            this.btnPatientDetail.Size = new System.Drawing.Size(405, 32);
+            this.btnPatientDetail.TabIndex = 88;
+            this.btnPatientDetail.Text = "ពិនិត្យពត៌មានលំអិត និងបញ្ជូនអ្នកជំងឺចូលបន្ទប់ព្យាបាល";
+            this.btnPatientDetail.UseVisualStyleBackColor = false;
+            this.btnPatientDetail.Click += new System.EventHandler(this.btnPatientDetail_Click);
+            // 
+            // btnPayment
+            // 
+            this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(79)))));
+            this.btnPayment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayment.FlatAppearance.BorderSize = 0;
+            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayment.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.ForeColor = System.Drawing.Color.White;
+            this.btnPayment.Location = new System.Drawing.Point(408, 147);
+            this.btnPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(358, 32);
+            this.btnPayment.TabIndex = 89;
+            this.btnPayment.Text = "ទូទាត់ប្រាក់";
+            this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            // 
             // frm_Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 693);
+            this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.btnPatientDetail);
             this.Controls.Add(this.btnEditPatient);
             this.Controls.Add(this.btn_Patient_Back);
@@ -341,7 +360,7 @@
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frm_Patient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -381,5 +400,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn patbirthyearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn patjobDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pataddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnPayment;
     }
 }

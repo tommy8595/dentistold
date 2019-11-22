@@ -34,9 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,11 +106,23 @@
     <Compile Include="frm_Income.Designer.cs">
       <DependentUpon>frm_Income.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_InvoicePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_InvoicePrint.Designer.cs">
+      <DependentUpon>frm_InvoicePrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_owed_lists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_owed_lists.Designer.cs">
+      <DependentUpon>frm_owed_lists.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Patient.cs">
       <SubType>Form</SubType>
@@ -125,6 +141,12 @@
     </Compile>
     <Compile Include="frm_Patient_Detail_Edit.Designer.cs">
       <DependentUpon>frm_Patient_Detail_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Payment.Designer.cs">
+      <DependentUpon>frm_Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Product.cs">
       <SubType>Form</SubType>
@@ -158,11 +180,21 @@
     </Compile>
     <Compile Include="GlobalMethod.cs" />
     <Compile Include="GlobalVariable.cs" />
+    <Compile Include="Grid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LocalReportExtensions.cs" />
     <Compile Include="MyMSB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyMSB.Designer.cs">
       <DependentUpon>MyMSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Owed_invoice_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Owed_invoice_print.Designer.cs">
+      <DependentUpon>Owed_invoice_print.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -191,8 +223,14 @@
     <EmbeddedResource Include="frm_Income.resx">
       <DependentUpon>frm_Income.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_InvoicePrint.resx">
+      <DependentUpon>frm_InvoicePrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_owed_lists.resx">
+      <DependentUpon>frm_owed_lists.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Patient.resx">
       <DependentUpon>frm_Patient.cs</DependentUpon>
@@ -202,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Patient_Detail_Edit.resx">
       <DependentUpon>frm_Patient_Detail_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Payment.resx">
+      <DependentUpon>frm_Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Product.resx">
       <DependentUpon>frm_Product.cs</DependentUpon>
@@ -221,6 +262,9 @@
     <EmbeddedResource Include="MyMSB.resx">
       <DependentUpon>MyMSB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Owed_invoice_print.resx">
+      <DependentUpon>Owed_invoice_print.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -230,6 +274,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\Invoice.rdlc" />
+    <EmbeddedResource Include="Report\Owed_Invoice.rdlc" />
     <None Include="Dentist_DS.xsc">
       <DependentUpon>Dentist_DS.xsd</DependentUpon>
     </None>
@@ -255,6 +301,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LowQualityImage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

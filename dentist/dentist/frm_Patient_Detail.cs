@@ -66,7 +66,14 @@ namespace dentist
         }
         private void btnShowPic_Click(object sender, EventArgs e)
         {
+            
             this.fun_getPatientImageByIDTableAdapter.Fill(dentist_DS.fun_getPatientImageByID, int.Parse(txtId.Text));
+            int rotateOrder = int.Parse(this.fun_getPatientImageByIDTableAdapter.GetData(int.Parse(txtId.Text)).Rows[0]["pat_image_order"].ToString());
+            for (int i = 0; i < rotateOrder; i++)
+            {
+                GlobalMethod.rotateimage(pictureBox1);
+            }
+            btnShowPic.Enabled = false;
         }
 
         private void btn_Reg_Pat_Save_Click(object sender, EventArgs e)

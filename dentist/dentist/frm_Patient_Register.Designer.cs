@@ -66,6 +66,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvMd = new System.Windows.Forms.DataGridView();
+            this.pat_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.md_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.md_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.md_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.md_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fun_getAllMedicalHistoryTableAdapter = new dentist.Dentist_DSTableAdapters.fun_getAllMedicalHistoryTableAdapter();
             this.nudDob = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
@@ -76,11 +81,7 @@
             this.nudHour = new System.Windows.Forms.NumericUpDown();
             this.nudMinute = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
-            this.pat_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.md_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.md_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.md_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.md_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRotate = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb)).BeginInit();
@@ -396,7 +397,7 @@
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("Khmer OS Battambang", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(1030, 294);
+            this.btnBrowse.Location = new System.Drawing.Point(989, 285);
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(76, 28);
@@ -508,6 +509,39 @@
             this.dgvMd.RowTemplate.Height = 30;
             this.dgvMd.Size = new System.Drawing.Size(982, 211);
             this.dgvMd.TabIndex = 67;
+            // 
+            // pat_id
+            // 
+            this.pat_id.HeaderText = "pat_id";
+            this.pat_id.Name = "pat_id";
+            this.pat_id.ReadOnly = true;
+            this.pat_id.Visible = false;
+            // 
+            // md_id
+            // 
+            this.md_id.HeaderText = "md_id";
+            this.md_id.Name = "md_id";
+            this.md_id.ReadOnly = true;
+            this.md_id.Visible = false;
+            // 
+            // md_name
+            // 
+            this.md_name.HeaderText = "ប្រវត្តិវេជ្ជសាស្រ្ត";
+            this.md_name.Name = "md_name";
+            this.md_name.ReadOnly = true;
+            // 
+            // md_description
+            // 
+            this.md_description.HeaderText = "ប្រវត្តិវេជ្ជសាស្ត្រលំអិត";
+            this.md_description.Name = "md_description";
+            this.md_description.ReadOnly = true;
+            // 
+            // md_status
+            // 
+            this.md_status.HeaderText = "md_status";
+            this.md_status.Name = "md_status";
+            this.md_status.ReadOnly = true;
+            this.md_status.Visible = false;
             // 
             // fun_getAllMedicalHistoryTableAdapter
             // 
@@ -629,44 +663,29 @@
             this.label15.TabIndex = 76;
             this.label15.Text = "នាទី";
             // 
-            // pat_id
+            // btnRotate
             // 
-            this.pat_id.HeaderText = "pat_id";
-            this.pat_id.Name = "pat_id";
-            this.pat_id.ReadOnly = true;
-            this.pat_id.Visible = false;
-            // 
-            // md_id
-            // 
-            this.md_id.HeaderText = "md_id";
-            this.md_id.Name = "md_id";
-            this.md_id.ReadOnly = true;
-            this.md_id.Visible = false;
-            // 
-            // md_name
-            // 
-            this.md_name.HeaderText = "ប្រវត្តិវេជ្ជសាស្រ្ត";
-            this.md_name.Name = "md_name";
-            this.md_name.ReadOnly = true;
-            // 
-            // md_description
-            // 
-            this.md_description.HeaderText = "ប្រវត្តិវេជ្ជសាស្ត្រលំអិត";
-            this.md_description.Name = "md_description";
-            this.md_description.ReadOnly = true;
-            // 
-            // md_status
-            // 
-            this.md_status.HeaderText = "md_status";
-            this.md_status.Name = "md_status";
-            this.md_status.ReadOnly = true;
-            this.md_status.Visible = false;
+            this.btnRotate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(77)))), ((int)(((byte)(79)))));
+            this.btnRotate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRotate.FlatAppearance.BorderSize = 0;
+            this.btnRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRotate.Font = new System.Drawing.Font("Khmer OS Battambang", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotate.ForeColor = System.Drawing.Color.White;
+            this.btnRotate.Location = new System.Drawing.Point(1069, 285);
+            this.btnRotate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRotate.Name = "btnRotate";
+            this.btnRotate.Size = new System.Drawing.Size(76, 28);
+            this.btnRotate.TabIndex = 78;
+            this.btnRotate.Text = "Rotate";
+            this.btnRotate.UseVisualStyleBackColor = false;
+            this.btnRotate.Click += new System.EventHandler(this.btnRotate_Click);
             // 
             // frm_Patient_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 693);
+            this.Controls.Add(this.btnRotate);
             this.Controls.Add(this.nudMinute);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.nudHour);
@@ -780,5 +799,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn md_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn md_description;
         private System.Windows.Forms.DataGridViewTextBoxColumn md_status;
+        private System.Windows.Forms.Button btnRotate;
     }
 }

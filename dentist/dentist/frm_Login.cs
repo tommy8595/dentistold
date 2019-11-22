@@ -22,10 +22,13 @@ namespace dentist
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            
             string username = txt_username.Text;
             string password = txt_password.Text;
             StoreProcedure.sp_login(username, password);
             StoreProcedure.fn_login_admin(username, password);
+            GlobalVariable._LowImagePath = StoreProcedure.GetConfig(1);
+            GlobalVariable._DefaultImgPath = StoreProcedure.GetConfig(2);
             this.Close();
             th = new Thread(openHome);
             th.SetApartmentState(ApartmentState.STA);
