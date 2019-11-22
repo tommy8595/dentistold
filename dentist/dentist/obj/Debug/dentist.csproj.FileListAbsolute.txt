@@ -142,3 +142,6 @@ C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_InvoiceP
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.Owed_invoice_print.resources
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_owed_lists.resources
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csprojResolveAssemblyReference.cache
+D:\dentist\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources
+D:\dentist\dentist\dentist\obj\Debug\dentist.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources

@@ -125,7 +125,14 @@ namespace dentist
             this.fun_getRecentPaymentTableAdapter.Fill(this.dentist_DS.fun_getRecentPayment);
             if (GlobalVariable._user_role=="admin")
             {
-
+                DataTable dt = new DataTable();
+                dt=StoreProcedure.get_pro_expire();
+                if (dt.Rows.Count > 0)
+                    foreach (DataRow dr in dt.Rows)
+                        if (System.Windows.Forms.MessageBox.Show(""+dr[0], "title", System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            StoreProcedure.update_notification(int.Parse(dr[0].ToString()));
+                        }
             }
             else if(GlobalVariable._user_role=="doctor")
             {
@@ -136,6 +143,7 @@ namespace dentist
                 btn_Expense.Enabled = false;
                 btn_Staff.Enabled= false;
                 btn_Money.Enabled = false;
+                btn_Report.Enabled = false;
 
             }
             else
@@ -163,7 +171,7 @@ namespace dentist
 
         private void pn_Home_Paint(object sender, PaintEventArgs e)
         {
-            label1.Text = GlobalVariable._user_data.Rows[0]["emp_id"].ToString();
+            
         }
 
         private void btnOwed_Click(object sender, EventArgs e)

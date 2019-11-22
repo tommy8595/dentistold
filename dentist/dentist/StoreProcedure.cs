@@ -18,7 +18,11 @@ namespace dentist
         private static SqlConnection con;
 
 
+<<<<<<< HEAD
         public static void spd_insert_patient(string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image,string pat_app_date,string pat_nation,string pat_tel, string pat_app_time,int pat_image_order)
+=======
+        public static void spd_insert_patient(string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel, string pat_app_time)
+>>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
         {
             //    @pat_kh_fname NVARCHAR(MAX),
             //    @pat_kh_lname NVARCHAR(MAX),
@@ -62,6 +66,27 @@ namespace dentist
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_patient : " + t.Message);
             }
         }
+        public static void sp_insert_expense(string detail,string name,float price)
+        {
+            try
+            {
+                con = new SqlConnection(connectionString);
+                con.Open();
+                cmd = new SqlCommand("dbo.sp_insert_expense", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@detail", detail);
+                cmd.Parameters.AddWithValue("@amount",price);
+                cmd.Parameters.AddWithValue("@name",name);
+                cmd.Parameters.AddWithValue("@user",GlobalVariable._user_name);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+            }
+            catch(Exception t)
+            {
+                GlobalMethod.HandleException("StoreProcedure / spd_insert_patient : " + t.Message);
+            }
+        }
         public static void spd_insert_doctor(string doc_name, string doc_bod, string doc_qual, string doc_tel, string doc_iden)
         {
             //@doc_name nvarchar(max),
@@ -88,6 +113,7 @@ namespace dentist
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
             }
         }
+<<<<<<< HEAD
 
     
     public static void spd_clear_owed(decimal repay_amount_usd,decimal repay_amount_riel,decimal owed_amount, int main_invoice_id, decimal ExchangeRate, int main_inv)
@@ -143,21 +169,185 @@ namespace dentist
             }
         }
         public static void sp_login(string username,string password)
+=======
+        //public static IDataReader get_expense(string period)
+        //{
+
+        //}'
+        public static int fn_get_stock_max()
         {
-            using (con = new SqlConnection(connectionString))
+            con = new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select 1+max(stock_id) from tbl_stock",con);
+            int max = (int)cmd.ExecuteScalar();
+            con.Close();
+            return max;
+        }
+        public static void sp_insert_product(DataTable dt,string time)
+>>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
+        {
+            try
             {
-                SqlCommand cmd = new SqlCommand("sp_login", con);
-                cmd.Parameters.AddWithValue("@name", username);
-                cmd.Parameters.AddWithValue("@pass", password);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter adp = new SqlDataAdapter();
-                adp.SelectCommand = cmd;
-                DataTable ds = new DataTable();
-                adp.Fill(ds);
-                GlobalVariable._user_data = ds;
+                using (con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("insert_stock", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@imp_date", time);
+                    SqlParameter param = new SqlParameter();
+                    //SqlParameter param = new SqlParameter("@sto", SqlDbType.Structured)
+                    //{
+                    //    TypeName = "dbo.stock",
+                    //    Value = dt
+                    //};
+                    param.ParameterName = "@sto";
+                    param.SqlDbType = SqlDbType.Structured;
+                    param.Value = dt;
+                    cmd.Parameters.Add(param);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }catch(Exception e)
+            {
+                GlobalMethod.HandleException("StoreProcedure / insert_stock : " + e.Message);
             }
         }
-        public static void fn_login_admin(string username,string password)
+        public static void fun_get_pro_cat(string cat)
+        {
+            try
+            {
+                
+            }catch(SqlException e)
+            {
+                GlobalMethod.HandleException("StoreProcedure / insert_stock : " + e.Message);
+            }
+        }
+        public static DataTable get_pro_detail(string name)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                using (con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cdm = new SqlCommand("select top 1* from tbl_product where pro_name like'"+name+"' +'%'", con);
+                    SqlDataAdapter adp = new SqlDataAdapter(cdm);
+                    adp.Fill(dt);
+                }
+                return dt;
+            }
+            catch (SqlException e)
+            {
+                
+                GlobalMethod.HandleException("StoreProcedure / insert_stock : " + e.Message);
+                return null;
+            }
+        }
+        public static void update_notification(int stock_id)
+        {
+            try
+            {
+                using (con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cdm = new SqlCommand("update tbl_stock set alerted=1 where stock_id=" + stock_id, con);
+                    con.Open();
+                    cdm.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (SqlException e)
+            {
+                GlobalMethod.HandleException("update_notification: " + e.Message);
+
+            }
+        }
+        
+        public static DataTable get_pro_expire()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cdm = new SqlCommand("select stock_id,(select pro_name from tbl_product where st.pro_id=pro_id) as Name,location,stock_qty,expiredate from tbl_stock st "
+                    + "where DATEDIFF(day, getdate(), expiredate) < 30 and expiredate > GETDATE()  and alerted is null", con);
+                    SqlDataAdapter adp = new SqlDataAdapter(cdm);
+                    adp.Fill(dt);
+                }
+                return dt;
+            }
+            catch (SqlException e)
+            {
+                GlobalMethod.HandleException("StoreProcedure / insert_stock : " + e.Message);
+                return null;
+            }
+        }
+        public static DataTable get_pro_detail_by_cat(int cat_id)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                using (con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cdm = new SqlCommand("select * from tbl_product where cat_id= "+cat_id+ " order by pro_name asc", con);
+                    SqlDataAdapter adp = new SqlDataAdapter(cdm);
+                    adp.Fill(dt);
+                }
+                return dt;
+            }
+            catch (SqlException e)
+            {
+
+                GlobalMethod.HandleException("StoreProcedure / insert_stock : " + e.Message);
+                return null;
+            }
+        }
+        public static void sp_login(string username, string password)
+        {
+            try
+            {
+                using (con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_login", con);
+                    cmd.Parameters.AddWithValue("@name", username);
+                    cmd.Parameters.AddWithValue("@pass", password);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter adp = new SqlDataAdapter();
+                    adp.SelectCommand = cmd;
+                    DataTable ds = new DataTable();
+                    adp.Fill(ds);
+                    GlobalVariable._user_data = ds;
+                }
+            }
+            catch (Exception t)
+            {
+                GlobalMethod.HandleException("StoreProcedure / sp_login : " + t.Message);
+            }
+        }
+        public static DataTable sp_get_expense(string peroid)
+        {
+            try
+            {
+                using (con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_get_expense", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@peroid", peroid);
+                    SqlDataAdapter rdr = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    rdr.Fill(dt);
+                    return dt;
+
+                }
+
+            }
+            catch (Exception t)
+            {
+                GlobalMethod.HandleException("sp_get_expense : " + t.Message);
+                return null;
+            }
+        }
+        public static void fn_login_admin(string username, string password)
         {
             try
             {
@@ -166,11 +356,10 @@ namespace dentist
                 cmd = new SqlCommand("select [dbo].[fn_login_admin](@u,@p);", con);
                 cmd.Parameters.AddWithValue("@u", username);
                 cmd.Parameters.AddWithValue("@p", password);
-                
                 GlobalVariable._role = int.Parse(cmd.ExecuteScalar().ToString());
                 con.Close();
             }
-            catch(Exception t)
+            catch (Exception t)
             {
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
             }
@@ -265,6 +454,7 @@ namespace dentist
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_tp : " + t.Message);
             }
         }
+<<<<<<< HEAD
         public static int spd_insert_invoice(decimal sum_of_usd, decimal sum_of_riel, string receiver, int pat_id)
         {
             //@sum_of_usd decimal(18,2),
@@ -384,6 +574,9 @@ namespace dentist
         }
 
         public static void spd_update_patientByID(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel,string pat_app_time,int pat_image_order)
+=======
+        public static void spd_update_patientByID(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel, string pat_app_time)
+>>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
         {
             //@pat_id int,
             //@pat_kh_fname NVARCHAR(MAX),
@@ -423,7 +616,7 @@ namespace dentist
             con.Close();
 
         }
-        public static void spd_update_mdHistoryByPatID(int pat_id,int md_id,string md_status,string md_description)
+        public static void spd_update_mdHistoryByPatID(int pat_id, int md_id, string md_status, string md_description)
         {
             //@pat_id int,
             //@md_id int,
@@ -442,6 +635,7 @@ namespace dentist
             con.Close();
 
         }
+<<<<<<< HEAD
         public static void spd_insert_owed(int invoice_id,decimal usd, int pat_id)
         {
             //@invoice_id int,
@@ -459,6 +653,9 @@ namespace dentist
 
         }
         public static void spd_insert_patDoc (int pat_id, string patDoc_code, int pat_id_length)
+=======
+        public static void spd_insert_patDoc(int pat_id, string patDoc_code, int pat_id_length)
+>>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
         {
             //@patDoc_code nvarchar(max),
             //@pat_id int
@@ -488,15 +685,15 @@ namespace dentist
                 con.Close();
                 return val;
             }
-            catch (Exception t )
-            {           
+            catch (Exception t)
+            {
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_tp : " + t.Message);
                 throw;
             }
 
         }
         //product
-        public  static void spd_insert_product( String productname,decimal productprice,String productunit,int cat_id)
+        public static void spd_insert_product(string productname, decimal productprice, string productunit, int cat_id)
         {
             con = new SqlConnection(connectionString);
             con.Open();
@@ -504,10 +701,23 @@ namespace dentist
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@productname", productname);
             cmd.Parameters.AddWithValue("@productprice", productprice);
-            cmd.Parameters.AddWithValue("@productunit", productunit);
+            cmd.Parameters.AddWithValue("@prounit", productunit);
             cmd.Parameters.AddWithValue("@catid", cat_id);
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        public static void insert_stock(string so,DateTime impdate)
+        {
+            con = new SqlConnection(connectionString);
+            con.Open();
+            cmd = new SqlCommand("dbo.insert_stock", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@so", so);
+            cmd.Parameters.AddWithValue("@imp_date", impdate);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
+    
 }
