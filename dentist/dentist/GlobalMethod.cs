@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -49,12 +48,6 @@ namespace dentist
                 }
             }
             return true;
-        }
-        public static void rotateimage(PictureBox pb)
-        {
-            Image flipImage = pb.Image;
-            flipImage.RotateFlip(RotateFlipType.Rotate90FlipXY);
-            pb.Image = flipImage;
         }
         public static void getGreenRed(string columnName, DataGridView dgv,string meaning)
         {
@@ -102,44 +95,6 @@ namespace dentist
             }
 
             return dt;
-        }
-        public static string VaryQualityLevel(string imgLoc)
-        {
-            // Get a bitmap. The using statement ensures objects  
-            // are automatically disposed from memory after use.  
-            using (Bitmap bmp1 = new Bitmap(imgLoc))
-            {
-                string GeneratedPath = "";
-                ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
-
-                // Create an Encoder object based on the GUID  
-                // for the Quality parameter category.  
-                System.Drawing.Imaging.Encoder myEncoder =
-                    System.Drawing.Imaging.Encoder.Quality;
-
-                // Create an EncoderParameters object.  
-                // An EncoderParameters object has an array of EncoderParameter  
-                // objects. In this case, there is only one  
-                // EncoderParameter object in the array.  
-                EncoderParameters myEncoderParameters = new EncoderParameters(1);
-                EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, 25L);
-                myEncoderParameters.Param[0] = myEncoderParameter;
-                GeneratedPath = @"C:\Users\MSI\Documents\dentistold\dentist\dentist\LowQualityImage\Image1.jpg";/*GlobalVariable._LowImagePath + @"\LowImage.jpg";*/
-                bmp1.Save(GeneratedPath, jpgEncoder, myEncoderParameters);
-                return GeneratedPath;
-            }
-        }
-        private static ImageCodecInfo GetEncoder(ImageFormat format)
-        {
-            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
-            foreach (ImageCodecInfo codec in codecs)
-            {
-                if (codec.FormatID == format.Guid)
-                {
-                    return codec;
-                }
-            }
-            return null;
         }
 
         public static void HandleException(string msg)

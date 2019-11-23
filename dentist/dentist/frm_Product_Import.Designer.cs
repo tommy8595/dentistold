@@ -39,7 +39,7 @@
             this.dtp_Pro_Imp_Expire = new System.Windows.Forms.DateTimePicker();
             this.cbo_Pro_Imp_Cat = new System.Windows.Forms.ComboBox();
             this.tblcatagoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dentistDataSet = new dentist.DentistDataSet();
+
             this.txt_Pro_Imp_Unit = new System.Windows.Forms.TextBox();
             this.btn_Pro_Imp_Cancel = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.tbl_catagoryTableAdapter = new dentist.DentistDataSetTableAdapters.tbl_catagoryTableAdapter();
+          
             this.dentistDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dentist_DS = new dentist.Dentist_DS();
             this.fungetPatientImageByIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -66,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcatagoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet)).BeginInit();
+      
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pro_Imp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dentistDataSetBindingSource)).BeginInit();
@@ -172,12 +172,11 @@
             // tblcatagoryBindingSource
             // 
             this.tblcatagoryBindingSource.DataMember = "tbl_catagory";
-            this.tblcatagoryBindingSource.DataSource = this.dentistDataSet;
+
             // 
             // dentistDataSet
             // 
-            this.dentistDataSet.DataSetName = "DentistDataSet";
-            this.dentistDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          
             // 
             // txt_Pro_Imp_Unit
             // 
@@ -362,11 +361,10 @@
             // 
             // tbl_catagoryTableAdapter
             // 
-            this.tbl_catagoryTableAdapter.ClearBeforeFill = true;
+       
             // 
             // dentistDataSetBindingSource
-            // 
-            this.dentistDataSetBindingSource.DataSource = this.dentistDataSet;
+
             this.dentistDataSetBindingSource.Position = 0;
             // 
             // dentist_DS
@@ -437,7 +435,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcatagoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet)).EndInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pro_Imp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dentistDataSetBindingSource)).EndInit();
@@ -472,9 +470,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private DentistDataSet dentistDataSet;
+      
         private System.Windows.Forms.BindingSource tblcatagoryBindingSource;
-        private DentistDataSetTableAdapters.tbl_catagoryTableAdapter tbl_catagoryTableAdapter;
+       
         private System.Windows.Forms.BindingSource dentistDataSetBindingSource;
         private Dentist_DS dentist_DS;
         private System.Windows.Forms.BindingSource fungetPatientImageByIDBindingSource;

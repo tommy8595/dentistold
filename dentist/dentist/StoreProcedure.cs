@@ -18,11 +18,7 @@ namespace dentist
         private static SqlConnection con;
 
 
-<<<<<<< HEAD
-        public static void spd_insert_patient(string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image,string pat_app_date,string pat_nation,string pat_tel, string pat_app_time,int pat_image_order)
-=======
         public static void spd_insert_patient(string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel, string pat_app_time)
->>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
         {
             //    @pat_kh_fname NVARCHAR(MAX),
             //    @pat_kh_lname NVARCHAR(MAX),
@@ -37,7 +33,6 @@ namespace dentist
             //    @pat_nation
             //    @pat_tel
             //    @pat_app_time nvarchar(max)
-            //    @pat_image_order int
             try
             {
                 con = new SqlConnection(connectionString);
@@ -57,7 +52,6 @@ namespace dentist
                 cmd.Parameters.AddWithValue("@pat_nation", pat_nation);
                 cmd.Parameters.AddWithValue("@pat_tel", pat_tel);
                 cmd.Parameters.AddWithValue("@pat_app_time", pat_app_time);
-                cmd.Parameters.AddWithValue("@pat_image_order", pat_image_order);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -113,63 +107,6 @@ namespace dentist
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
             }
         }
-<<<<<<< HEAD
-
-    
-    public static void spd_clear_owed(decimal repay_amount_usd,decimal repay_amount_riel,decimal owed_amount, int main_invoice_id, decimal ExchangeRate, int main_inv)
-    {
-            //@repay_amount_usd decimal(18, 2), 
-            //@invoice_id int
-            //@owed_amount decimal(18,2)
-            //@repay_amount_riel decimal(18,2),
-            //@ex_rate decimal(18,0)
-            //@main_invoice int
-            try
-            {
-            con = new SqlConnection(connectionString);
-            con.Open();
-            cmd = new SqlCommand("dbo.spd_clear_owed", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@repay_amount_usd", repay_amount_usd);
-            cmd.Parameters.AddWithValue("@invoice_id", main_invoice_id);
-            cmd.Parameters.AddWithValue("@owed_amount", owed_amount);
-            cmd.Parameters.AddWithValue("@repay_amount_riel", repay_amount_riel);
-            cmd.Parameters.AddWithValue("@ex_rate", ExchangeRate);
-            cmd.Parameters.AddWithValue("@main_invoice", main_inv);
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        catch (Exception t)
-        {
-            GlobalMethod.HandleException("StoreProcedure / spd_clear_owed : " + t.Message);
-        }
-    }
-    public static void spd_update_recieve_invoice(int inv_id, decimal usd, decimal riel,string status)
-        {
-            //@inv_id int,
-            //@usd decimal(18, 2), 
-            //@riel decimal(18, 0)
-            //@status nvarchar
-            try
-            {
-                con = new SqlConnection(connectionString);
-                con.Open();
-                cmd = new SqlCommand("dbo.spd_update_recieve_invoice", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@inv_id", inv_id);
-                cmd.Parameters.AddWithValue("@usd", usd);
-                cmd.Parameters.AddWithValue("@riel", riel);
-                cmd.Parameters.AddWithValue("@status", @status);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception t)
-            {
-                GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
-            }
-        }
-        public static void sp_login(string username,string password)
-=======
         //public static IDataReader get_expense(string period)
         //{
 
@@ -184,7 +121,6 @@ namespace dentist
             return max;
         }
         public static void sp_insert_product(DataTable dt,string time)
->>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
         {
             try
             {
@@ -365,46 +301,6 @@ namespace dentist
             }
 
         }
-        public static string GetConfig(int config_id)
-        {
-            try
-            {
-                con = new SqlConnection(connectionString);
-                con.Open();
-                cmd = new SqlCommand("SELECT dbo.fun_getConfigByID(@config_id)", con);
-                cmd.Parameters.AddWithValue("@config_id", config_id);
-                string t= (string)cmd.ExecuteScalar();
-                con.Close();
-                return t;
-
-            }
-            catch (Exception t)
-            {
-                GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
-                throw;
-            }
-
-        }
-        public static object GetScalarValue(int config_id)
-        {
-            try
-            {
-                con = new SqlConnection(connectionString);
-                con.Open();
-                cmd = new SqlCommand("SELECT dbo.fun_getConfigByID(@config_id)", con);
-                cmd.Parameters.AddWithValue("@config_id", config_id);
-                string t = (string)cmd.ExecuteScalar();
-                con.Close();
-                return t;
-
-            }
-            catch (Exception t)
-            {
-                GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
-                throw;
-            }
-
-        }
         public static void spd_insert_patient_md(DataGridView dgv)
         {
             //TableStructure
@@ -454,129 +350,7 @@ namespace dentist
                 GlobalMethod.HandleException("StoreProcedure / spd_insert_tp : " + t.Message);
             }
         }
-<<<<<<< HEAD
-        public static int spd_insert_invoice(decimal sum_of_usd, decimal sum_of_riel, string receiver, int pat_id)
-        {
-            //@sum_of_usd decimal(18,2),
-            //@sum_of_riel decimal(18, 0),
-	        //@receiver nvarchar(max),
-            //@pat_id int
-            try
-            {
-                int invoice_id;
-                con = new SqlConnection(connectionString);
-                con.Open();
-                cmd = new SqlCommand("dbo.spd_insert_invoice", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@sum_of_usd", sum_of_usd);
-                cmd.Parameters.AddWithValue("@sum_of_riel", sum_of_riel);
-                cmd.Parameters.AddWithValue("@receiver", receiver);
-                cmd.Parameters.AddWithValue("@pat_id", pat_id);
-                var returnParameter = cmd.Parameters.Add("@invoice_id", SqlDbType.Int);
-                returnParameter.Direction = ParameterDirection.ReturnValue;
-                cmd.ExecuteNonQuery();
-                invoice_id = (int)returnParameter.Value;
-                con.Close();
-                return invoice_id;
-            }
-            catch (Exception t)
-            {
-                GlobalMethod.HandleException("StoreProcedure / spd_insert_doctor : " + t.Message);
-                throw;
-            }
-        }
-        public static int spd_insert_service_payment(DataGridView dgv1,DataGridView dgv2,string @reciever, int pat_id)
-        {
-            //TableStructure
-            //tp_id int,
-            //invoice_id int,
-            //sp_des nvarchar(max),
-            //sp_amount_usd decimal(18, 2),
-            //sp_amount_riel decimal(18, 0)
-            //@TempSP
-            //[ps_id][int] NULL,
-            //[invoice_id][int] NULL,
-            //[ps_des][nvarchar](max) NULL,
-            //[ps_unit][nvarchar](max) NULL,
-            //[ps_amount][decimal](18, 0) NULL,
-            //[ps_total][decimal](18, 2) NULL
-            //@TempPP
-            //@reciever nvarchar(max)
-
-            try
-            {
-                int invoice_id=0;
-                DataTable dt,dt1;
-                con = new SqlConnection(connectionString);
-                con.Open();
-                cmd = new SqlCommand("[dbo].[spd_insert_service_payment]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter param = new SqlParameter();
-                param.ParameterName = "@TempSP";
-                dt = GlobalMethod.convertDGVtoDT(dgv1);
-                dt.Columns.Remove("tp_date");
-                dt.Columns.Remove("charge_amount");
-                dt.Columns.Remove("discount_amount");
-                dt.Columns.Remove("doc_name");
-                dt.Columns.Remove("pat_id");
-                dt.Columns.Remove("sd_id");
-                dt.Columns.Remove("paid_status");
-                dt.Columns.Remove("doc_id");
-                dt.Columns.Add("invoice_id");
-                dt.Columns.Add("amount_riel");
-                dt.Columns["tp_id"].SetOrdinal(0);
-                dt.Columns["invoice_id"].SetOrdinal(1);
-                dt.Columns["sd_name"].SetOrdinal(2);
-                dt.Columns["total_amount"].SetOrdinal(3);
-                dt.Columns["amount_riel"].SetOrdinal(4);               
-                foreach (DataRow row in dt.Rows)
-                {
-                    row["amount_riel"] = "0";
-                }
-                param.Value = dt;
-                SqlParameter param1 = new SqlParameter();
-                param1.ParameterName = "@TempPP";
-                dt1 = GlobalMethod.convertDGVtoDT(dgv2);
-                dt1.Columns.Add("invoice_id");
-                dt1.Columns.Remove("ps_price");
-                dt1.Columns.Remove("ps_status");
-                dt1.Columns.Remove("pro_id");
-                dt1.Columns.Remove("ps_date");
-                dt1.Columns["ps_id"].SetOrdinal(0);
-                dt1.Columns["invoice_id"].SetOrdinal(1);
-                dt1.Columns["ps_des"].SetOrdinal(2);
-                dt1.Columns["ps_unit"].SetOrdinal(3);
-                dt1.Columns["ps_amount"].SetOrdinal(4);
-                dt1.Columns["ps_total"].SetOrdinal(5);
-                param1.Value = dt1;
-                SqlParameter param2 = new SqlParameter();
-                param2.ParameterName = "@reciever";
-                param2.Value = reciever;
-                SqlParameter param3 = new SqlParameter();
-                param3.ParameterName = "@pat_id";
-                param3.Value = pat_id;
-                cmd.Parameters.Add(param);
-                cmd.Parameters.Add(param1);
-                cmd.Parameters.Add(param2);
-                cmd.Parameters.Add(param3);
-                var returnParameter = cmd.Parameters.Add("@invoice_id", SqlDbType.Int);
-                returnParameter.Direction = ParameterDirection.ReturnValue;
-                cmd.ExecuteNonQuery();
-                invoice_id = (int)returnParameter.Value;
-                con.Close();
-                return invoice_id;
-            }
-            catch (Exception t)
-            {
-                GlobalMethod.HandleException("StoreProcedure / spd_insert_service_payment : " + t.Message);
-                throw;
-            }
-        }
-
-        public static void spd_update_patientByID(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel,string pat_app_time,int pat_image_order)
-=======
         public static void spd_update_patientByID(int pat_id, string pat_kh_fname, string pat_kh_lname, string pat_fname, string pat_lname, string pat_gender, string pat_birthyear, string pat_job, string pat_address, byte[] pat_image, string pat_app_date, string pat_nation, string pat_tel, string pat_app_time)
->>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
         {
             //@pat_id int,
             //@pat_kh_fname NVARCHAR(MAX),
@@ -592,7 +366,6 @@ namespace dentist
             //@pat_nation nvarchar(max),
             //@pat_tel nvarchar(max)
             //@pat_app_time nvarchar(max)
-            //@@pat_image_order int
             con = new SqlConnection(connectionString);
             con.Open();
             cmd = new SqlCommand("dbo.spd_update_patientByID", con);
@@ -611,7 +384,6 @@ namespace dentist
             cmd.Parameters.AddWithValue("@pat_nation", pat_nation);
             cmd.Parameters.AddWithValue("@pat_tel", pat_tel);
             cmd.Parameters.AddWithValue("@pat_app_time", pat_app_time);
-            cmd.Parameters.AddWithValue("@pat_image_order", pat_image_order);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -635,27 +407,7 @@ namespace dentist
             con.Close();
 
         }
-<<<<<<< HEAD
-        public static void spd_insert_owed(int invoice_id,decimal usd, int pat_id)
-        {
-            //@invoice_id int,
-            //@usd decimal(18, 2), 
-            //@pat_id int
-            con = new SqlConnection(connectionString);
-            con.Open();
-            cmd = new SqlCommand("dbo.spd_insert_owed", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@invoice_id", invoice_id);
-            cmd.Parameters.AddWithValue("@usd", usd);
-            cmd.Parameters.AddWithValue("@pat_id", pat_id);
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-        }
-        public static void spd_insert_patDoc (int pat_id, string patDoc_code, int pat_id_length)
-=======
         public static void spd_insert_patDoc(int pat_id, string patDoc_code, int pat_id_length)
->>>>>>> 776e7df6be30489ae317b4a368bd69e91acfe9d5
         {
             //@patDoc_code nvarchar(max),
             //@pat_id int
@@ -703,17 +455,6 @@ namespace dentist
             cmd.Parameters.AddWithValue("@productprice", productprice);
             cmd.Parameters.AddWithValue("@prounit", productunit);
             cmd.Parameters.AddWithValue("@catid", cat_id);
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public static void insert_stock(string so,DateTime impdate)
-        {
-            con = new SqlConnection(connectionString);
-            con.Open();
-            cmd = new SqlCommand("dbo.insert_stock", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@so", so);
-            cmd.Parameters.AddWithValue("@imp_date", impdate);
             cmd.ExecuteNonQuery();
             con.Close();
         }

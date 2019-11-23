@@ -137,20 +137,6 @@ namespace dentist
             if (cboSearchChoice.SelectedIndex == -1) { return; }
             txtSearch.Clear();
         }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GlobalVariable._Patient_id = dataGridView1.CurrentRow.Cells["patidDataGridViewTextBoxColumn"].Value.ToString();
-                frm_Payment form = new frm_Payment(dataGridView1.CurrentRow.Cells["fullKhName"].Value.ToString());
-                form.ShowDialog();
-            }
-            catch (Exception t)
-            {
-                GlobalMethod.HandleException("frm_Patient / btnPayment_Click " + t.Message);
-            }
-        }
     }
 }
 

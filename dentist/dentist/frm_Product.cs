@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using System.Data.SqlClient;
 
 namespace dentist
 {
@@ -57,13 +56,6 @@ namespace dentist
         private void openImport()
         {
             Application.Run(new frm_Product_Import());
-        }
-
-        private void Frm_Product_Load(object sender, EventArgs e)
-        {
-            ///dgv_Product_List.Columns["expiredate"].ToString("dd/mm/yyyy");
-            this.fun_getAllProductTableAdapter.Fill(this.dentistDataSet2.fun_getAllProduct);
-            dataGridView1.Columns["expiredateDataGridViewTextBoxColumn"].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
     }
 }

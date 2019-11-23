@@ -134,14 +134,34 @@ C:\Users\Gabriel\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csproj.C
 C:\Users\Gabriel\Documents\dentistold\dentist\dentist\obj\Debug\dentist.exe
 C:\Users\Gabriel\Documents\dentistold\dentist\dentist\obj\Debug\dentist.pdb
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources
-C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Payment.resources
-C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\RdlCompile.cache
-C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\RdlCompile.compiled
-C:\Users\MSI\Documents\dentistold\dentist\dentist\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_InvoicePrint.resources
-C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.Owed_invoice_print.resources
-C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_owed_lists.resources
 C:\Users\MSI\Documents\dentistold\dentist\dentist\obj\Debug\dentist.csprojResolveAssemblyReference.cache
 D:\dentist\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources
 D:\dentist\dentist\dentist\obj\Debug\dentist.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Documents\dentistold\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.csprojAssemblyReference.cache
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Doctor.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Doctor_Detail.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Doctor_Register.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Edit_Patient_Md.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Expense.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Expense_Add.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Home.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Income.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Login.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Patient.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Patient_Detail_Edit.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Product.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Product_Detail.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Product_Import.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Register_Product.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.frm_Patient_Register.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.MyMSB.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.Properties.Resources.resources
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.csproj.GenerateResource.cache
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.exe
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\obj\Debug\dentist.pdb
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\bin\Debug\dentist.exe.config
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\bin\Debug\dentist.exe
+C:\Users\Gabriel\Documents\dentist_project\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c (2)\dentistold-144f93c6f0cd1e2b5ca31a0a30c7301d7914863c\dentist\dentist\bin\Debug\dentist.pdb

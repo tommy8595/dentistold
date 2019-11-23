@@ -59,8 +59,21 @@ namespace dentist
         {
             string format = "yyyy-MM-dd";
             DateTime exp_date = DateTime.Parse(dtp_Pro_Imp_Expire.Text);
-            dt.Rows.Add(cbo_Pro_Imp_Name.SelectedValue.ToString(), txt_Pro_Imp_Qty.Text, cbo_location.Text, exp_date.ToString(format), cbo_Pro_Imp_Name.Text, txt_Pro_Imp_Unit.Text);
-         
+            if (cbo_Pro_Imp_Name.Text != "" && txt_Pro_Imp_Qty.Text != "")
+                dt.Rows.Add(cbo_Pro_Imp_Name.SelectedValue.ToString(), txt_Pro_Imp_Qty.Text, cbo_location.Text, exp_date.ToString(format), cbo_Pro_Imp_Name.Text, txt_Pro_Imp_Unit.Text);
+            else
+                if ((System.Windows.Forms.MessageBox.Show("Do you wish to continue?", "title", System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No))
+               
+                    if ((System.Windows.Forms.MessageBox.Show("Are you sure?", "title", System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes))
+                    {
+                        this.Close();
+                        Thread th = new Thread(openProduct);
+                        th.SetApartmentState(ApartmentState.STA);
+                        th.Start();
+                    }
+              
+
+
 
         }
 
@@ -69,7 +82,7 @@ namespace dentist
         private void frm_Product_Import_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dentistDataSet.tbl_catagory' table. You can move, or remove it, as needed.
-            this.tbl_catagoryTableAdapter.Fill(this.dentistDataSet.tbl_catagory);
+ 
             this.dt.Columns.Add("pro_id", typeof(string));
             this.dt.Columns.Add("stock_qty", typeof(string));
             this.dt.Columns.Add("location", typeof(string));
