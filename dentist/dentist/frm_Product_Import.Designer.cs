@@ -39,7 +39,6 @@
             this.dtp_Pro_Imp_Expire = new System.Windows.Forms.DateTimePicker();
             this.cbo_Pro_Imp_Cat = new System.Windows.Forms.ComboBox();
             this.tblcatagoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-
             this.txt_Pro_Imp_Unit = new System.Windows.Forms.TextBox();
             this.btn_Pro_Imp_Cancel = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
@@ -55,23 +54,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-          
             this.dentistDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dentist_DS = new dentist.Dentist_DS();
             this.fungetPatientImageByIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fun_getPatientImageByIDTableAdapter = new dentist.Dentist_DSTableAdapters.fun_getPatientImageByIDTableAdapter();
             this.cbo_location = new System.Windows.Forms.ComboBox();
+            this.dentistDataSet = new dentist.DentistDataSet();
+            this.tblcatagoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_catagoryTableAdapter = new dentist.DentistDataSetTableAdapters.tbl_catagoryTableAdapter();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcatagoryBindingSource)).BeginInit();
-      
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pro_Imp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dentistDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dentist_DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fungetPatientImageByIDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblcatagoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -156,7 +158,7 @@
             // 
             // cbo_Pro_Imp_Cat
             // 
-            this.cbo_Pro_Imp_Cat.DataSource = this.tblcatagoryBindingSource;
+            this.cbo_Pro_Imp_Cat.DataSource = this.tblcatagoryBindingSource1;
             this.cbo_Pro_Imp_Cat.DisplayMember = "cat_name";
             this.cbo_Pro_Imp_Cat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Pro_Imp_Cat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,11 +174,6 @@
             // tblcatagoryBindingSource
             // 
             this.tblcatagoryBindingSource.DataMember = "tbl_catagory";
-
-            // 
-            // dentistDataSet
-            // 
-          
             // 
             // txt_Pro_Imp_Unit
             // 
@@ -359,14 +356,6 @@
             this.pictureBox3.TabIndex = 178;
             this.pictureBox3.TabStop = false;
             // 
-            // tbl_catagoryTableAdapter
-            // 
-       
-            // 
-            // dentistDataSetBindingSource
-
-            this.dentistDataSetBindingSource.Position = 0;
-            // 
             // dentist_DS
             // 
             this.dentist_DS.DataSetName = "Dentist_DS";
@@ -392,6 +381,20 @@
             this.cbo_location.Name = "cbo_location";
             this.cbo_location.Size = new System.Drawing.Size(349, 33);
             this.cbo_location.TabIndex = 4;
+            // 
+            // dentistDataSet
+            // 
+            this.dentistDataSet.DataSetName = "DentistDataSet";
+            this.dentistDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblcatagoryBindingSource1
+            // 
+            this.tblcatagoryBindingSource1.DataMember = "tbl_catagory";
+            this.tblcatagoryBindingSource1.DataSource = this.dentistDataSet;
+            // 
+            // tbl_catagoryTableAdapter
+            // 
+            this.tbl_catagoryTableAdapter.ClearBeforeFill = true;
             // 
             // frm_Product_Import
             // 
@@ -435,12 +438,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcatagoryBindingSource)).EndInit();
-          
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pro_Imp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dentistDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dentist_DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fungetPatientImageByIDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblcatagoryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +482,8 @@
         private System.Windows.Forms.BindingSource fungetPatientImageByIDBindingSource;
         private Dentist_DSTableAdapters.fun_getPatientImageByIDTableAdapter fun_getPatientImageByIDTableAdapter;
         private System.Windows.Forms.ComboBox cbo_location;
+        private DentistDataSet dentistDataSet;
+        private System.Windows.Forms.BindingSource tblcatagoryBindingSource1;
+        private DentistDataSetTableAdapters.tbl_catagoryTableAdapter tbl_catagoryTableAdapter;
     }
 }

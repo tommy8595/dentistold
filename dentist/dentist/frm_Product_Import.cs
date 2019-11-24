@@ -82,7 +82,9 @@ namespace dentist
         private void frm_Product_Import_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dentistDataSet.tbl_catagory' table. You can move, or remove it, as needed.
- 
+            this.tbl_catagoryTableAdapter.Fill(this.dentistDataSet.tbl_catagory);
+            // TODO: This line of code loads data into the 'dentistDataSet.tbl_catagory' table. You can move, or remove it, as needed.
+
             this.dt.Columns.Add("pro_id", typeof(string));
             this.dt.Columns.Add("stock_qty", typeof(string));
             this.dt.Columns.Add("location", typeof(string));

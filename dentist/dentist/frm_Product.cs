@@ -57,5 +57,12 @@ namespace dentist
         {
             Application.Run(new frm_Product_Import());
         }
+
+        private void frm_Product_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dentistDataSet1.fun_getAllProduct' table. You can move, or remove it, as needed.
+            this.fun_getAllProductTableAdapter.Fill(this.dentistDataSet1.fun_getAllProduct);
+
+        }
     }
 }
