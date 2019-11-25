@@ -62,7 +62,7 @@ namespace dentist
         {
             // TODO: This line of code loads data into the 'dentistDataSet1.fun_getAllProduct' table. You can move, or remove it, as needed.
             this.fun_getAllProductTableAdapter.Fill(this.dentistDataSet1.fun_getAllProduct);
-
+            dgv_Product_List.Columns["expiredateDataGridViewTextBoxColumn"].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
     }
 }

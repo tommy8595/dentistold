@@ -30,28 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Product));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Product_Back = new System.Windows.Forms.Button();
             this.dgv_Product_List = new System.Windows.Forms.DataGridView();
-            this.btn_Product_Import = new System.Windows.Forms.Button();
-            this.btn_Product_Register = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_Patient_Search = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.dentistDataSet1 = new dentist.DentistDataSet1();
-            this.fungetAllProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fun_getAllProductTableAdapter = new dentist.DentistDataSet1TableAdapters.fun_getAllProductTableAdapter();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockqtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prounitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expiredateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fungetAllProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dentistDataSet1 = new dentist.DentistDataSet1();
+            this.btn_Product_Import = new System.Windows.Forms.Button();
+            this.btn_Product_Register = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Patient_Search = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.fun_getAllProductTableAdapter = new dentist.DentistDataSet1TableAdapters.fun_getAllProductTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Product_List)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fungetAllProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fungetAllProductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Product_Back
@@ -64,10 +67,9 @@
             this.btn_Product_Back.ForeColor = System.Drawing.Color.White;
             this.btn_Product_Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_Product_Back.Image")));
             this.btn_Product_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Product_Back.Location = new System.Drawing.Point(57, 1212);
-            this.btn_Product_Back.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Product_Back.Location = new System.Drawing.Point(38, 776);
             this.btn_Product_Back.Name = "btn_Product_Back";
-            this.btn_Product_Back.Size = new System.Drawing.Size(276, 78);
+            this.btn_Product_Back.Size = new System.Drawing.Size(184, 50);
             this.btn_Product_Back.TabIndex = 96;
             this.btn_Product_Back.Text = "ត្រឡប់ក្រោយ";
             this.btn_Product_Back.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -76,10 +78,13 @@
             // 
             // dgv_Product_List
             // 
+            this.dgv_Product_List.AllowUserToAddRows = false;
+            this.dgv_Product_List.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgv_Product_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Product_List.AutoGenerateColumns = false;
             this.dgv_Product_List.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Product_List.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_Product_List.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Product_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Product_List.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
@@ -89,13 +94,77 @@
             this.expiredateDataGridViewTextBoxColumn,
             this.locationDataGridViewTextBoxColumn});
             this.dgv_Product_List.DataSource = this.fungetAllProductBindingSource;
-            this.dgv_Product_List.Location = new System.Drawing.Point(57, 283);
-            this.dgv_Product_List.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Khmer OS Battambang", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Product_List.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Product_List.Location = new System.Drawing.Point(38, 181);
             this.dgv_Product_List.Name = "dgv_Product_List";
             this.dgv_Product_List.RowHeadersWidth = 51;
-            this.dgv_Product_List.RowTemplate.Height = 24;
-            this.dgv_Product_List.Size = new System.Drawing.Size(2193, 905);
-            this.dgv_Product_List.TabIndex = 95;
+            this.dgv_Product_List.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_Product_List.RowTemplate.Height = 30;
+            this.dgv_Product_List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Product_List.Size = new System.Drawing.Size(1462, 579);
+            this.dgv_Product_List.TabIndex = 99;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "ឈ្មោះ";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // catnameDataGridViewTextBoxColumn
+            // 
+            this.catnameDataGridViewTextBoxColumn.DataPropertyName = "cat_name";
+            this.catnameDataGridViewTextBoxColumn.HeaderText = "ប្រភេទ";
+            this.catnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.catnameDataGridViewTextBoxColumn.Name = "catnameDataGridViewTextBoxColumn";
+            // 
+            // stockqtyDataGridViewTextBoxColumn
+            // 
+            this.stockqtyDataGridViewTextBoxColumn.DataPropertyName = "stock_qty";
+            this.stockqtyDataGridViewTextBoxColumn.HeaderText = "ចំនួន";
+            this.stockqtyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stockqtyDataGridViewTextBoxColumn.Name = "stockqtyDataGridViewTextBoxColumn";
+            // 
+            // prounitDataGridViewTextBoxColumn
+            // 
+            this.prounitDataGridViewTextBoxColumn.DataPropertyName = "pro_unit";
+            this.prounitDataGridViewTextBoxColumn.HeaderText = "ឯកតា";
+            this.prounitDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.prounitDataGridViewTextBoxColumn.Name = "prounitDataGridViewTextBoxColumn";
+            // 
+            // expiredateDataGridViewTextBoxColumn
+            // 
+            this.expiredateDataGridViewTextBoxColumn.DataPropertyName = "expiredate";
+            this.expiredateDataGridViewTextBoxColumn.HeaderText = "ថ្ងៃផុតកំណត់";
+            this.expiredateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.expiredateDataGridViewTextBoxColumn.Name = "expiredateDataGridViewTextBoxColumn";
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.locationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.locationDataGridViewTextBoxColumn.HeaderText = "ទីតាំង";
+            this.locationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            // 
+            // fungetAllProductBindingSource
+            // 
+            this.fungetAllProductBindingSource.DataMember = "fun_getAllProduct";
+            this.fungetAllProductBindingSource.DataSource = this.dentistDataSet1;
+            // 
+            // dentistDataSet1
+            // 
+            this.dentistDataSet1.DataSetName = "DentistDataSet1";
+            this.dentistDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_Product_Import
             // 
@@ -105,10 +174,9 @@
             this.btn_Product_Import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Product_Import.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Product_Import.ForeColor = System.Drawing.Color.White;
-            this.btn_Product_Import.Location = new System.Drawing.Point(57, 195);
-            this.btn_Product_Import.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Product_Import.Location = new System.Drawing.Point(38, 125);
             this.btn_Product_Import.Name = "btn_Product_Import";
-            this.btn_Product_Import.Size = new System.Drawing.Size(1800, 62);
+            this.btn_Product_Import.Size = new System.Drawing.Size(1200, 40);
             this.btn_Product_Import.TabIndex = 94;
             this.btn_Product_Import.Text = "នាំចូល";
             this.btn_Product_Import.UseVisualStyleBackColor = false;
@@ -122,10 +190,9 @@
             this.btn_Product_Register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Product_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Product_Register.ForeColor = System.Drawing.Color.White;
-            this.btn_Product_Register.Location = new System.Drawing.Point(1881, 195);
-            this.btn_Product_Register.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Product_Register.Location = new System.Drawing.Point(1254, 125);
             this.btn_Product_Register.Name = "btn_Product_Register";
-            this.btn_Product_Register.Size = new System.Drawing.Size(369, 62);
+            this.btn_Product_Register.Size = new System.Drawing.Size(246, 40);
             this.btn_Product_Register.TabIndex = 97;
             this.btn_Product_Register.Text = "ចុះឈ្មោះផលិតផលថ្មី";
             this.btn_Product_Register.UseVisualStyleBackColor = false;
@@ -139,9 +206,8 @@
             this.panel4.Controls.Add(this.pictureBox9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(2297, 169);
+            this.panel4.Size = new System.Drawing.Size(1518, 108);
             this.panel4.TabIndex = 98;
             // 
             // btn_Patient_Search
@@ -152,10 +218,9 @@
             this.btn_Patient_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Patient_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Patient_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Patient_Search.Location = new System.Drawing.Point(2046, 56);
-            this.btn_Patient_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Patient_Search.Location = new System.Drawing.Point(1364, 36);
             this.btn_Patient_Search.Name = "btn_Patient_Search";
-            this.btn_Patient_Search.Size = new System.Drawing.Size(202, 53);
+            this.btn_Patient_Search.Size = new System.Drawing.Size(135, 34);
             this.btn_Patient_Search.TabIndex = 4;
             this.btn_Patient_Search.Text = "ស្វែងរក";
             this.btn_Patient_Search.UseVisualStyleBackColor = false;
@@ -164,79 +229,30 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1440, 56);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Location = new System.Drawing.Point(960, 36);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(596, 44);
+            this.textBox1.Size = new System.Drawing.Size(398, 30);
             this.textBox1.TabIndex = 1;
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(4, 8);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox9.Location = new System.Drawing.Point(3, 5);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(150, 156);
+            this.pictureBox9.Size = new System.Drawing.Size(100, 100);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
-            // 
-            // dentistDataSet1
-            // 
-            this.dentistDataSet1.DataSetName = "DentistDataSet1";
-            this.dentistDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fungetAllProductBindingSource
-            // 
-            this.fungetAllProductBindingSource.DataMember = "fun_getAllProduct";
-            this.fungetAllProductBindingSource.DataSource = this.dentistDataSet1;
             // 
             // fun_getAllProductTableAdapter
             // 
             this.fun_getAllProductTableAdapter.ClearBeforeFill = true;
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // catnameDataGridViewTextBoxColumn
-            // 
-            this.catnameDataGridViewTextBoxColumn.DataPropertyName = "cat_name";
-            this.catnameDataGridViewTextBoxColumn.HeaderText = "cat_name";
-            this.catnameDataGridViewTextBoxColumn.Name = "catnameDataGridViewTextBoxColumn";
-            // 
-            // stockqtyDataGridViewTextBoxColumn
-            // 
-            this.stockqtyDataGridViewTextBoxColumn.DataPropertyName = "stock_qty";
-            this.stockqtyDataGridViewTextBoxColumn.HeaderText = "stock_qty";
-            this.stockqtyDataGridViewTextBoxColumn.Name = "stockqtyDataGridViewTextBoxColumn";
-            // 
-            // prounitDataGridViewTextBoxColumn
-            // 
-            this.prounitDataGridViewTextBoxColumn.DataPropertyName = "pro_unit";
-            this.prounitDataGridViewTextBoxColumn.HeaderText = "pro_unit";
-            this.prounitDataGridViewTextBoxColumn.Name = "prounitDataGridViewTextBoxColumn";
-            // 
-            // expiredateDataGridViewTextBoxColumn
-            // 
-            this.expiredateDataGridViewTextBoxColumn.DataPropertyName = "expiredate";
-            this.expiredateDataGridViewTextBoxColumn.HeaderText = "expiredate";
-            this.expiredateDataGridViewTextBoxColumn.Name = "expiredateDataGridViewTextBoxColumn";
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            // 
             // frm_Product
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2297, 1312);
+            this.ClientSize = new System.Drawing.Size(1518, 846);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btn_Product_Register);
             this.Controls.Add(this.btn_Product_Back);
@@ -244,18 +260,17 @@
             this.Controls.Add(this.btn_Product_Import);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frm_Product";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ប្រព័ន្ធគ្រប់គ្រង់គ្លីនិកធ្នេញ";
             this.Load += new System.EventHandler(this.frm_Product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Product_List)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fungetAllProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dentistDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fungetAllProductBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
